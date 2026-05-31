@@ -2,10 +2,20 @@ import pyjsx_setup  # registers .px / .pyx import hook — must be first
 
 pyjsx_setup.setup()
 
-from reactpy.backend.starlette import configure
+from reactpy import html
+from reactpy.backend.starlette import Options, configure
 from starlette.applications import Starlette
+from starlette.staticfiles import StaticFiles
 
 from components.hello import HelloWorld  # type: ignore[import-not-found]
 
 app = Starlette()
-configure(app, HelloWorld)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+options = Options(
+    head=(
+        html.title("My Site"),
+        html.link({"rel": "stylesheet", "href": "/static/output.css"}),
+    )
+)
+configure(app, HelloWorld, options=options)
