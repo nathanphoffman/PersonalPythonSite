@@ -1,0 +1,7 @@
+[tool.mypy]
+strict = true
+exclude = ["components/.*\\.px$"]
+
+[[tool.mypy.overrides]]
+module = ["reactpy.*", "pyjsx.*"]
+ignore_missing_imports = true
