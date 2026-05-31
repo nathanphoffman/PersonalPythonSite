@@ -7,15 +7,15 @@ from reactpy.backend.starlette import Options, configure
 from starlette.applications import Starlette
 from starlette.staticfiles import StaticFiles
 
-from components.hello import HelloWorld  # type: ignore[import-not-found]
+from components.app import App  # type: ignore[import-not-found]
 
 app = Starlette()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 options = Options(
     head=(
-        html.title("My Site"),
+        html.title("The Coding Astronomer"),
         html.link({"rel": "stylesheet", "href": "/static/output.css"}),
     )
 )
-configure(app, HelloWorld, options=options)
+configure(app, App, options=options)
