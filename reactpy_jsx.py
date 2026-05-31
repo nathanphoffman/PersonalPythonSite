@@ -19,11 +19,17 @@ def jsx(
     pyjsx compiles <h1>Hello</h1> → jsx("h1", {}, "Hello")
     This function maps those calls to reactpy html.* elements.
     """
-    converted: dict[str, Any] = {_to_snake_case(k): v for k, v in (props or {}).items()}
-
     if isinstance(tag, str):
+        converted: dict[str, Any] = {_to_snake_case(k): v for k, v in (props or {}).items()}
         fn: Callable[..., Any] = getattr(_html, tag)
         return fn(converted, *children) if converted else fn(*children)
 
-    # tag is a @component function — call it directly
-    return tag(**converted)
+    if hasattr(tag, "__wrapped__"):
+        # @component Python function — props become snake_case kwargs
+        converted = {_to_snake_case(k): v for k, v in (props or {}).items()}
+        return tag(**converted)
+
+    # VDOM constructor (e.g. from export()) — pass props dict as-is with original keys
+    if props:
+        return tag(props, *children)
+    return tag(*children) if children else tag()

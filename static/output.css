@@ -313,6 +313,12 @@
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
   .list-none {
     list-style-type: none;
   }
@@ -392,17 +398,8 @@
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
-  .border-gray-500 {
-    border-color: var(--color-gray-500);
-  }
   .border-gray-700 {
     border-color: var(--color-gray-700);
-  }
-  .bg-black\/50 {
-    background-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
   }
   .bg-blue-50 {
     background-color: var(--color-blue-50);
@@ -445,6 +442,9 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
@@ -566,6 +566,10 @@
   .shadow-lg {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -724,6 +728,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -746,6 +755,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
     }
   }
 }
