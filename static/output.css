@@ -291,8 +291,8 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
-  .h-32 {
-    height: calc(var(--spacing) * 32);
+  .h-30 {
+    height: calc(var(--spacing) * 30);
   }
   .h-48 {
     height: calc(var(--spacing) * 48);
@@ -302,6 +302,9 @@
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
   }
   .w-48 {
     width: calc(var(--spacing) * 48);
@@ -314,6 +317,9 @@
   }
   .max-w-5xl {
     max-width: var(--container-5xl);
+  }
+  .flex-1 {
+    flex: 1;
   }
   .border-collapse {
     border-collapse: collapse;

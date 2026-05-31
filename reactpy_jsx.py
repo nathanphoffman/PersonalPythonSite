@@ -27,6 +27,9 @@ def jsx(
     if hasattr(tag, "__wrapped__"):
         # @component Python function — props become snake_case kwargs
         converted = {_to_snake_case(k): v for k, v in (props or {}).items()}
+        flat_children = children[0] if children and isinstance(children[0], list) else list(children)
+        if flat_children:
+            return tag(children=flat_children, **converted)
         return tag(**converted)
 
     # VDOM constructor (e.g. from export()) — pass props dict as-is with original keys

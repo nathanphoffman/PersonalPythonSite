@@ -3,7 +3,7 @@ from reactpy_jsx import jsx
 from typing import Any
 
 from components.pages.children.project import Project  # type: ignore[import-not-found]
-
+from components.pages.project_grid import ProjectGrid
 
 @component
 def Projects() -> Any:
@@ -19,10 +19,10 @@ def Projects() -> Any:
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-700 mt-10 mb-4 border-b border-gray-200 pb-2">2020</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <ProjectGrid>
                 <Project name="CleanBlog React v2" summary="Updating my personal website (this site) to use the latest version of React, and cleaning some things up." tech="React, Bootstrap" image="codingastronomer.png" link="" />
                 <Project name="Vue Calendar" summary="Creating a calendar with Node, MongoDB, Vue and pure-CSS." tech="Node, Mongo, Vue, CSS" image="" link="" />
-            </div>
+            </ProjectGrid>
 
             <h2 className="text-2xl font-semibold text-gray-700 mt-10 mb-4 border-b border-gray-200 pb-2">2019</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
