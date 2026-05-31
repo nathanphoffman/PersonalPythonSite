@@ -1,3 +1,4 @@
+import asyncio
 from reactpy import component, use_state
 from reactpy_jsx import jsx
 from reactpy.backend.hooks import use_location
@@ -16,6 +17,14 @@ from components.router import PopStateListener
 def App() -> Any:
     location = use_location()
     path, set_path = use_state(location.pathname)
+    fading, set_fading = use_state(False)
+
+    async def handle_navigate(new_path):
+        set_fading(True)
+        await asyncio.sleep(0.3)
+        set_path(new_path)
+        await asyncio.sleep(0.05)
+        set_fading(False)
 
     if path == "/projects":
         content = <Projects />
@@ -24,12 +33,14 @@ def App() -> Any:
     else:
         content = <Home />
 
+    content_class = "max-w-5xl mx-auto px-6 py-16 transition-opacity duration-300 " + ("opacity-0" if fading else "opacity-100")
+
     return (
         <div className="min-h-screen bg-white">
-            <PopStateListener onNavigate={set_path} />
-            <Navbar on_navigate={set_path} />
+            <PopStateListener onNavigate={handle_navigate} />
+            <Navbar on_navigate={handle_navigate} />
             <Header />
-            <div className="max-w-5xl mx-auto px-6 py-16">
+            <div className={content_class}>
                 {content}
             </div>
             <Footer />

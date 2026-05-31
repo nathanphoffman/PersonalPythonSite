@@ -15,7 +15,7 @@ def About() -> Any:
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Programming</h2>
             <p>
                 In the late 80s I was born into a basement which was flooded with Commodore 64 Amiga hardware
-                and software from my dad&#39;s closed computer shop business. For many years, my brother and I
+                and software from my dad's closed computer shop business. For many years, my brother and I
                 discovered treasures from the shop in old boxes and storage. In my preteen years my dad handed
                 me the Second Edition C book by Brian Kernighan and Dennis Ritchie, and I began building both my
                 first programs and my first computers. By high school I was creating websites for friends who had
