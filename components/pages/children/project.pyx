@@ -1,6 +1,7 @@
 from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
+from components.utils import children_text
 
 
 @component
@@ -30,6 +31,6 @@ def Project(name: str = "", tech: str = "", link: str = "", image: str = "", chi
                     </div>
                 </div>
             </div>
-            <p className="text-sm text-gray-600 mt-1">{children}</p>
+            <p className="text-sm text-gray-600 mt-1">{children_text(children)}</p>
         </div>
     )

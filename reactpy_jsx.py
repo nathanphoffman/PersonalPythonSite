@@ -22,7 +22,8 @@ def jsx(
     if isinstance(tag, str):
         converted: dict[str, Any] = {_to_snake_case(k): v for k, v in (props or {}).items()}
         fn: Callable[..., Any] = getattr(_html, tag)
-        return fn(converted, *children) if converted else fn(*children)
+        flat = [item for c in children for item in (c if isinstance(c, list) else [c])]
+        return fn(converted, *flat) if converted else fn(*flat)
 
     if hasattr(tag, "__wrapped__"):
         # @component Python function — props become snake_case kwargs

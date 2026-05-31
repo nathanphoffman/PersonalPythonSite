@@ -4,6 +4,7 @@ from typing import Any
 
 from components.pages.children.project import Project  # type: ignore[import-not-found]
 from components.pages.project_grid import ProjectGrid
+from components.pages.project_title import ProjectTitle
 
 @component
 def Projects() -> Any:
@@ -18,11 +19,61 @@ def Projects() -> Any:
                 <a target="_blank" rel="noopener noreferrer" className="mx-1 text-blue-600 hover:text-blue-800" href="https://github.com/nathanphoffman">my Personal GitHub.</a>
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-700 mt-10 mb-4 border-b border-gray-200 pb-2">2020</h2>
+            <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
-                <Project name="CleanBlog React v2" tech="React, Bootstrap" image="codingastronomer.png" link="">
-                    Updating my personal website (this site) to use the latest version
-                    of React, and cleaning some things up.
+                <Project name="Personal Site Refresh" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    (This Site))
+                </Project>
+                <Project name="Food Comparison" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    A Tool for comparing foods
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2025</ProjectTitle>
+            <ProjectGrid>
+                <Project name="Weather Site" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked on a Board Game Scraper
+                </Project>
+                <Project name="JS RPG" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked on a Board Game Scraper
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2024</ProjectTitle>
+            <ProjectGrid>
+                <Project name="BGG Scraper" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked on a Board Game Scraper
+                </Project>
+                <Project name="Tiny Mighty RPG" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked on a Board Game Scraper
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2023</ProjectTitle>
+            <ProjectGrid>
+                <Project name="Berks Homes" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked on Berks Homes's internal home modeling, design, and planning software.
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2022</ProjectTitle>
+            <ProjectGrid>
+                <Project name="Lucky Vitamin" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked for Luckyvitamin
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2021</ProjectTitle>
+            <ProjectGrid>
+                <Project name="Lucky Vitamin" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked for Luckyvitamin
+                </Project>
+            </ProjectGrid>
+
+            <ProjectTitle>2020</ProjectTitle>
+            <ProjectGrid>
+                <Project name="Lucky Vitamin" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    Worked for Luckyvitamin
                 </Project>
                 <Project name="Vue Calendar" tech="Node, Mongo, Vue, CSS" image="" link="">
                     Creating a calendar with Node, MongoDB, Vue and pure-CSS.

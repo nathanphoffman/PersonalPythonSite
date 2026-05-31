@@ -1,4 +1,5 @@
 from reactpy import component, html
+from reactpy_jsx import jsx
 from typing import Any
 
 @component
