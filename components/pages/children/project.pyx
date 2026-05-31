@@ -4,7 +4,7 @@ from typing import Any
 
 
 @component
-def Project(name: str = "", summary: str = "", tech: str = "", link: str = "", image: str = "") -> Any:
+def Project(name: str = "", tech: str = "", link: str = "", image: str = "", children=None) -> Any:
     if link:
         title_el = (
             <a target="_blank" rel="noopener noreferrer" href={link} className="text-blue-600 hover:text-blue-800">
@@ -30,6 +30,6 @@ def Project(name: str = "", summary: str = "", tech: str = "", link: str = "", i
                     </div>
                 </div>
             </div>
-            <p className="text-sm text-gray-600 mt-1">{summary}</p>
+            <p className="text-sm text-gray-600 mt-1">{children}</p>
         </div>
     )
