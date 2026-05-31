@@ -1,12 +1,12 @@
 from reactpy import component, use_state
 from reactpy_jsx import jsx
-
+from typing import Any
 
 @component
-def HelloWorld():
+def HelloWorld() -> Any:
 
     count, set_count = use_state(0)
-    x: int = "hello"
+    x: str = "hello"
     
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
