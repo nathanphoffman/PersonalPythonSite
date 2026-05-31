@@ -2,3 +2,4 @@ reactpy[starlette]==1.1.0
 python-jsx==0.4.0
 uvicorn[standard]==0.48.0
 aiofiles>=23.0
+starlette<0.21.0
