@@ -1,4 +1,6 @@
-import pyjsx.auto_setup  # registers .px import hook — must be first
+import pyjsx_setup  # registers .px / .pyx import hook — must be first
+
+pyjsx_setup.setup()
 
 from reactpy.backend.starlette import configure
 from starlette.applications import Starlette

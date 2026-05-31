@@ -1,6 +1,6 @@
 [tool.mypy]
 strict = true
-exclude = ["components/.*\\.px$"]
+exclude = ["components/.*\\.pyx?$"]
 
 [[tool.mypy.overrides]]
 module = ["reactpy.*", "pyjsx.*"]
