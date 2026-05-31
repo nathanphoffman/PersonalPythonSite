@@ -8,6 +8,9 @@ def About() -> Any:
     return (
         <div className="text-gray-700 leading-relaxed">
             <h1 className="text-4xl font-bold text-gray-900 mb-8">About Me</h1>
+            <div className="flex justify-center mb-8">
+                <img src="/static/img/nate.jpg" alt="Me at a waterfall." className="rounded-full w-48 h-48 object-cover shadow-lg" />
+            </div>
 
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Programming</h2>
             <p>

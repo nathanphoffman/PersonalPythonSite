@@ -5,13 +5,15 @@ from typing import Any
 
 @component
 def Header() -> Any:
+    bg_style = {"backgroundImage": "url('/static/img/2.jpg')", "backgroundSize": "cover", "backgroundPosition": "center"}
     return (
-        <header className="bg-gray-800 text-white text-center pt-32 pb-24 mt-16">
-            <div className="max-w-3xl mx-auto px-4">
+        <header style={bg_style} className="relative text-white text-center pt-32 pb-24 mt-16">
+            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="relative max-w-3xl mx-auto px-4">
                 <h2 className="text-5xl font-bold mb-4">The Coding Astronomer</h2>
-                <hr className="w-16 mx-auto border-gray-500 mb-4" />
+                <hr className="w-16 mx-auto border-gray-300 mb-4" />
                 <p className="text-lg text-gray-200">The Site of Nathan Hoffman</p>
-                <p className="text-gray-400">Programmer and Amateur Astronomer</p>
+                <p className="text-gray-300">Programmer and Amateur Astronomer</p>
             </div>
         </header>
     )
