@@ -23,7 +23,7 @@ def Navbar(on_navigate=None) -> Any:
         <nav className="fixed top-0 w-full bg-gray-900 z-50 shadow-lg">
             <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
                 <NavLink href="/" onNavigate={on_navigate} className="text-white text-xl font-bold hover:text-gray-300 transition-colors">
-                    The Coding Astronomer
+                    Nathan Hoffman.me
                 </NavLink>
                 <ul className="hidden md:flex space-x-6 list-none m-0 p-0">
                     <li><NavLink href="/" onNavigate={on_navigate} className="text-gray-300 hover:text-white text-sm transition-colors">Home (Latest Posts)</NavLink></li>

@@ -19,7 +19,7 @@ def App() -> Any:
     path, set_path = use_state(location.pathname)
     fading, set_fading = use_state(False)
 
-    async def handle_navigate(new_path):
+    async def handle_navigate(new_path: str) -> None:
         set_fading(True)
         await asyncio.sleep(0.3)
         set_path(new_path)
