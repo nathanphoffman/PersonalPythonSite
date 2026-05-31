@@ -1,0 +1,3 @@
+reactpy[starlette]==1.1.0
+python-jsx==0.4.0
+uvicorn[standard]==0.48.0
