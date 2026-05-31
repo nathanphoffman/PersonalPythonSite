@@ -1,6 +1,9 @@
+# Required component imports
 from reactpy import component, use_state
 from reactpy_jsx import jsx
 from typing import Any
+
+from components.test import Test
 
 @component
 def HelloWorld() -> Any:
@@ -11,6 +14,7 @@ def HelloWorld() -> Any:
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
             <div className="text-center space-y-4">
+                <Test></Test>
                 <h1 className="text-4xl font-bold text-gray-900">Hello, World 7!</h1>
                 <p className="text-gray-500">Built with ReactPy + PyJSX on Starlette</p>
                 <p className="text-lg text-gray-700">Button clicks: {count}</p>

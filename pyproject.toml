@@ -3,5 +3,5 @@ strict = true
 exclude = ["components/.*\\.pyx?$"]
 
 [[tool.mypy.overrides]]
-module = ["reactpy.*", "pyjsx.*"]
+module = ["reactpy.*", "pyjsx.*", "components.*"]
 ignore_missing_imports = true
