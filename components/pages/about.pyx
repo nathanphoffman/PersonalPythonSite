@@ -21,10 +21,11 @@ def About() -> Any:
                 first programs and my first computers. By high school I was creating websites for friends who had
                 parents with businesses, and building computers for their families. I joined computer LAN groups
                 and hosted one of my own. Today, many years later, I continue my career in code, having worked
-                as an Application Developer for a REIT company and a Senior Software Developer for a startup.
+                as an Application Developer for a REIT company and a Senior Software Developer for a startup, vitamin company, and home building business.
                 I also find myself coding in my spare time and my code can be found on GitHub. Currently my main
-                talents are in the web specifically with React, Vue, C#, Node, MongoDB and the cloud services
-                Azure and AWS.
+                talents are in the web specifically with Typescript, React, Vue, C#, Node, MongoDB and some cloud services.  
+                I also have begun experimenting with Python, Go, Rust and even created my own programming language Deor.  
+                Plus I sometimes go back to my roots opening up old school C code every once in a while.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Astronomy</h2>
@@ -32,8 +33,7 @@ def About() -> Any:
                 When I was young, my dad would look at the nightsky through a small spotting scope at planets,
                 planets that I had seen on science programs or Star Trek. I remember being utterly fascinated
                 that one could see something as distant as a planet through nothing more than glass, and today
-                I am sitting near a 10 inch diameter newtonian reflector, german equatorial mount, and 2 other
-                telescopes, making treks every year far away from city lights. While I am not stargazing, I am
+                I make treks every year far away from city lights. While I am not stargazing, I am
                 staying up-to-date with space news and looking back at the 1960s when spaceflight and science
                 were the rage of a generation.
             </p>
@@ -42,8 +42,7 @@ def About() -> Any:
             <p>
                 I have had many other hobbies, though none as long or consistent as my love of programming and
                 astronomy. Among them are: board gaming, video gaming, hiking, studying literary classics like
-                Tolkien, and appreciating painters like Bob Ross. You may notice my paint brush link tribute up
-                in the navbar. Give it a go for a random episode!
+                Tolkien and Shakespeare.
             </p>
         </div>
     )
