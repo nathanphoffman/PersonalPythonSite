@@ -21,10 +21,24 @@ def Projects() -> Any:
 
             <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
-                <Project name="Personal Site Refresh" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                <Project name="Deor Programming Language" tech="Deor,Rust,Tailwind,TS/JS" image="codingastronomer.png" link="https://deor.dev">
+                    A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with two demo projects a Pi generator and a simple API.
+
+                    Also uses the New Web Project to host <a href="https://spec.deor.dev">the spec</a>.
+                </Project>
+                <Project name="The New Web Project" tech="WASM,TS/JS,Go,CSS,Electron" image="codingastronomer.png" link="">
+                    The New Web Project was the result of asking myself in the shower "what would the web look 1995 if we had the tools of 2026." The response was this growing project: a markdown-driven web platform complete with wasm integration for scripting, forms, and even an editor for markdown files, along with an electron browser.
+                </Project>
+                <Project name="Solar Bit" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    A Tool for comparing foods
+                </Project>
+                <Project name="Food Comparison" tech="TS/JS," image="codingastronomer.png" link="">
+                    A Tool for comparing foods
+                </Project>
+                <Project name="Personal Site Refresh" tech="Python,ReactPy,Tailwind" image="codingastronomer.png" link="">
                     (This Site))
                 </Project>
-                <Project name="Food Comparison" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                <Project name="React Native Testing" tech="React, Bootstrap" image="codingastronomer.png" link="">
                     A Tool for comparing foods
                 </Project>
             </ProjectGrid>

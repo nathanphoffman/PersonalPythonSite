@@ -1,1 +1,7 @@
-providers = ["python", "node"]
+providers = ["node"]
+[phases.setup]
+cmds = ["curl -LsSf https://astral.sh/uv/install.sh | sh"]
+[phases.install]
+cmds = ["uv sync --no-dev", "npm install"]
+[phases.build]
+cmds = ["npm run deploy"]

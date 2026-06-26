@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "uv sync && npm install",
     "build:css": "npx @tailwindcss/cli -i static/input.css -o static/output.css",
     "deploy": "npx @tailwindcss/cli -i static/input.css -o static/output.css --minify",
     "watch:css": "npx @tailwindcss/cli -i static/input.css -o static/output.css --watch",
-    "dev": "concurrently --kill-others-on-fail -n css,server,mypy -c cyan,green,magenta \"npm run watch:css\" \"uvicorn main:app --reload --reload-include '*.pyx'\" \"npm run watch:mypy\"",
-    "type-check": "python scripts/mypy_pyx.py",
-    "watch:mypy": "python scripts/mypy_pyx.py && python -m watchfiles --filter python 'python scripts/mypy_pyx.py' components/"
+    "dev": "concurrently --kill-others-on-fail -n css,server,mypy -c cyan,green,magenta \"npm run watch:css\" \"uv run uvicorn main:app --reload --reload-include '*.pyx'\" \"npm run watch:mypy\"",
+    "type-check": "uv run python scripts/mypy_pyx.py",
+    "watch:mypy": "uv run python scripts/mypy_pyx.py && uv run python -m watchfiles --filter python 'uv run python scripts/mypy_pyx.py' components/"
   },
   "repository": {
     "type": "git",

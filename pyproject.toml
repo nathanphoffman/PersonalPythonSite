@@ -1,3 +1,18 @@
+[project]
+name = "personalpythonsite"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "reactpy[starlette]==1.1.0",
+    "python-jsx==0.4.0",
+    "uvicorn[standard]==0.48.0",
+    "aiofiles>=23.0",
+    "starlette<0.21.0",
+]
+
+[dependency-groups]
+dev = ["mypy==1.10.*"]
+
 [tool.mypy]
 strict = true
 exclude = ["components/.*\\.pyx?$"]

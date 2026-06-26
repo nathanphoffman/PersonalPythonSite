@@ -12,7 +12,6 @@ from components.pages.about import About
 from components.pages.projects import Projects
 from components.router import PopStateListener
 
-
 @component
 def App() -> Any:
     location = use_location()
