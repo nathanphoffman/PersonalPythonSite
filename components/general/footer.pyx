@@ -12,7 +12,6 @@ def Footer() -> Any:
             <div className="max-w-5xl mx-auto px-4">
                 <ul className="flex justify-center space-x-2 list-none p-0 mb-6 flex-wrap gap-y-2">
                     <li><LgIcon link_target="_blank" address="https://medium.com/@nathanphoffman" icon="medium" /></li>
-                    <li><LgIcon link_target="_blank" address="https://twitter.com/nathanphoffman" icon="twitter" /></li>
                     <li><LgIcon link_target="_blank" address="https://github.com/nathanphoffman" icon="github" /></li>
                     <li><LgIcon link_target="_blank" address="http://stackoverflow.com/users/4266442/nate" icon="stack-overflow" /></li>
                     <li><LgIcon link_target="_blank" address="https://www.linkedin.com/in/nathan-hoffman-a75994111/" icon="linkedin" /></li>

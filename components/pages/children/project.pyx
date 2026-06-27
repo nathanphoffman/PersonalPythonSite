@@ -9,7 +9,7 @@ def Project(name: str = "", tech: str = "", link: str = "", image: str = "", chi
     if link:
         title_el = (
             <a target="_blank" rel="noopener noreferrer" href={link} className="text-blue-600 hover:text-blue-800">
-                {name} &#8599;
+                {name}
             </a>
         )
     else:
@@ -31,6 +31,6 @@ def Project(name: str = "", tech: str = "", link: str = "", image: str = "", chi
                     </div>
                 </div>
             </div>
-            <p className="text-sm text-gray-600 mt-1">{children_text(children)}</p>
+            <p className="text-sm text-gray-600 mt-1">{children}</p>
         </div>
     )

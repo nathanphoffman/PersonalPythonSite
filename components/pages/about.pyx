@@ -20,14 +20,19 @@ def About() -> Any:
                 me the Second Edition C book by Brian Kernighan and Dennis Ritchie, and I began building both my
                 first programs and my first computers. By high school I was creating websites for friends who had
                 parents with businesses, and building computers for their families. I joined computer LAN groups
-                and hosted one of my own. Today, many years later, I continue my career in code, having worked
-                as an Application Developer for a REIT company and a Senior Software Developer for a startup, vitamin company, and home building business.
+                and hosted one of my own. 
+            </p>
+            <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Career</h2>
+            <p>
+                While working for a REIT company as a Desktop Support Technician, I had a chance to make my childhood love a reality, becoming a FT programmer. I have since worked
+                as an Application Developer for that REIT company, a Senior Software Developer for a startup, a vitamin company, and a home building business.
                 I also find myself coding in my spare time and my code can be found on GitHub. Currently my main
                 talents are in the web specifically with Typescript, React, Vue, C#, Node, MongoDB and some cloud services.  
-                I also have begun experimenting with Python, Go, Rust and even created my own programming language Deor.  
-                Plus I sometimes go back to my roots opening up old school C code every once in a while.
             </p>
-
+            <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">A New Surge</h2>
+            <p>
+            Covid, combined with programming becoming more of a chore at some of my jobs caused me to start to do less of it as a hobby, however that has substantially changed. I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
+            </p>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Astronomy</h2>
             <p>
                 When I was young, my dad would look at the nightsky through a small spotting scope at planets,

@@ -24,7 +24,7 @@ def Projects() -> Any:
                 <Project name="Deor Programming Language" tech="Deor,Rust,Tailwind,TS/JS" image="codingastronomer.png" link="https://deor.dev">
                     A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with two demo projects a Pi generator and a simple API.
 
-                    Also uses the New Web Project to host <a href="https://spec.deor.dev">the spec</a>.
+                    Also uses the New Web Project to host <a href="https://spec.deor.dev">the specs</a>.
                 </Project>
                 <Project name="The New Web Project" tech="WASM,TS/JS,Go,CSS,Electron" image="codingastronomer.png" link="">
                     The New Web Project was the result of asking myself in the shower "what would the web look 1995 if we had the tools of 2026." The response was this growing project: a markdown-driven web platform complete with wasm integration for scripting, forms, and even an editor for markdown files, along with an electron browser.
@@ -45,12 +45,12 @@ def Projects() -> Any:
 
             <ProjectTitle>2025</ProjectTitle>
             <ProjectGrid>
-                <Project name="Weather Site" tech="React, Bootstrap" image="codingastronomer.png" link="">
-                    Worked on a Board Game Scraper
+                <Project name="Weather Site" tech="React, Bootstrap" image="codingastronomer.png" link="https://weather.nathanhoffman.me">
+                    A Weather Site that simplifies w
                 </Project>
-                <Project name="JS RPG" tech="React, Bootstrap" image="codingastronomer.png" link="">
-                    Worked on a Board Game Scraper
-                </Project>
+                <Project name="RPG From Scratch" tech="React, Bootstrap" image="codingastronomer.png" link="">
+                    I started working on a small CRPG from scratch using vanilla JS and TS to render a basic 2d game. It uses a custom canvas engine to render the layers of the game and uses 0 AI to have something completely my own.
+                    </Project>
             </ProjectGrid>
 
             <ProjectTitle>2024</ProjectTitle>
