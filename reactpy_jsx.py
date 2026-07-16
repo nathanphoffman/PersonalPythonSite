@@ -22,7 +22,7 @@ def jsx(
     if isinstance(tag, str):
         converted: dict[str, Any] = {_to_snake_case(k): v for k, v in (props or {}).items()}
         fn: Callable[..., Any] = getattr(_html, tag)
-        flat = [item for c in children for item in (c if isinstance(c, list) else [c])]
+        flat = [item for c in children for item in (c if isinstance(c, list) else [c]) if item is not None]
         return fn(converted, *flat) if converted else fn(*flat)
 
     if hasattr(tag, "__wrapped__"):
@@ -34,6 +34,7 @@ def jsx(
         return tag(**converted)
 
     # VDOM constructor (e.g. from export()) — pass props dict as-is with original keys
+    flat = children[0] if children and isinstance(children[0], list) else list(children)
     if props:
-        return tag(props, *children)
-    return tag(*children) if children else tag()
+        return tag(props, *flat)
+    return tag(*flat) if flat else tag()

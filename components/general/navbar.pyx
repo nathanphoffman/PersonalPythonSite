@@ -9,15 +9,13 @@ from components.router import NavLink
 def Navbar(on_navigate=None) -> Any:
     menu_open, set_menu_open = use_state(False)
 
-    mobile_menu = None
-    if menu_open:
-        mobile_menu = (
-            <div className="md:hidden bg-gray-800 border-t border-gray-700 px-6 py-4 space-y-3">
+    mobile_menu = (
+        <div className="md:hidden bg-gray-800 border-t border-gray-700 px-6 py-4 space-y-3">
                 <NavLink href="/" onNavigate={on_navigate} className="block text-gray-300 hover:text-white text-sm py-1">Home (Latest Posts)</NavLink>
                 <NavLink href="/projects" onNavigate={on_navigate} className="block text-gray-300 hover:text-white text-sm py-1">Code Projects</NavLink>
                 <NavLink href="/about" onNavigate={on_navigate} className="block text-gray-300 hover:text-white text-sm py-1">About Me</NavLink>
-            </div>
-        )
+        </div>
+    ) if menu_open else None
 
     return (
         <nav className="fixed top-0 w-full bg-gray-900 z-50 shadow-lg">
@@ -25,6 +23,7 @@ def Navbar(on_navigate=None) -> Any:
                 <NavLink href="/" onNavigate={on_navigate} className="text-white text-xl font-bold hover:text-gray-300 transition-colors">
                     The Code of Nathan Hoffman
                 </NavLink>
+    
                 <ul className="hidden md:flex space-x-6 list-none m-0 p-0">
                     <li><NavLink href="/" onNavigate={on_navigate} className="text-gray-300 hover:text-white text-sm transition-colors">Home (Latest Posts)</NavLink></li>
                     <li><NavLink href="/projects" onNavigate={on_navigate} className="text-gray-300 hover:text-white text-sm transition-colors">Code Projects</NavLink></li>
