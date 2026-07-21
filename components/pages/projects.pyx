@@ -21,22 +21,22 @@ def Projects() -> Any:
 
             <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
-                <Project name="Deor Programming Language" tech="Deor,Rust,Tailwind,TS/JS" image="codingastronomer.png" link="https://deor.dev">
-                    A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with two demo projects a Pi generator and a simple API.
-
-                    Also uses the New Web Project to host <a href="https://spec.deor.dev">the specs</a>.
+                <Project name="Deor Programming Language" tech="Deor,Rust,Tailwind,TS/JS" image="deor.png" link="https://deor.dev">
+                    A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with a demo Pi generator and a new-web
+                    <a class="underline ml-1" target="_new" href="https://spec.deor.dev">spec</a>.
                 </Project>
                 <Project name="The New Web Project" tech="WASM,TS/JS,Go,CSS,Electron" image="codingastronomer.png" link="">
-                    The New Web Project was the result of asking myself in the shower "what would the web look 1995 if we had the tools of 2026." The response was this growing project: a markdown-driven web platform complete with wasm integration for scripting, forms, and even an editor for markdown files, along with an electron browser.
+                    The New Web Project was the result of asking myself in the shower "what would the web look 1995 if we had the tools of 2026." The response was this growing project: 
+                    a markdown-driven web platform complete with wasm integration for scripting, forms, along with an electron browser.
                 </Project>
-                <Project name="Solar Bit" tech="React, Bootstrap" image="codingastronomer.png" link="">
-                    A Tool for comparing foods
+                <Project name="Solar Bit" tech="C#, Go" image="codingastronomer.png" link="">
+                    An attempt to create a web deployment platform (like Railway), still highly experimental and not yet published, likely going to become an open source project.
                 </Project>
                 <Project name="Food Comparison" tech="TS/JS," image="codingastronomer.png" link="">
                     A Tool for comparing foods
                 </Project>
                 <Project name="Personal Site Refresh" tech="Python,ReactPy,Tailwind" image="codingastronomer.png" link="">
-                    (This Site))
+                    Migrated an old reactjs project that I had manually created in the past to ReactPy and Pyx using some help from Claude.
                 </Project>
                 <Project name="React Native Testing" tech="React, Bootstrap" image="codingastronomer.png" link="">
                     A Tool for comparing foods
@@ -46,7 +46,7 @@ def Projects() -> Any:
             <ProjectTitle>2025</ProjectTitle>
             <ProjectGrid>
                 <Project name="Weather Site" tech="React, Bootstrap" image="codingastronomer.png" link="https://weather.nathanhoffman.me">
-                    A Weather Site that simplifies w
+                    A Weather Site that simplifies weather to just a handful of metrics
                 </Project>
                 <Project name="RPG From Scratch" tech="React, Bootstrap" image="codingastronomer.png" link="">
                     I started working on a small CRPG from scratch using vanilla JS and TS to render a basic 2d game. It uses a custom canvas engine to render the layers of the game and uses 0 AI to have something completely my own.
@@ -65,8 +65,8 @@ def Projects() -> Any:
 
             <ProjectTitle>2023</ProjectTitle>
             <ProjectGrid>
-                <Project name="Berks Homes" tech="React, Bootstrap" image="codingastronomer.png" link="">
-                    Worked on Berks Homes's internal home modeling, design, and planning software.
+                <Project name="Berks Homes" tech="React, Bootstrap" image="berks.png" link="">
+                    Worked on Berks Homes's internal home modeling, design, and planning website, an internal tool used by employees.
                 </Project>
             </ProjectGrid>
 
