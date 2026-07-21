@@ -10,7 +10,11 @@ def Home() -> Any:
                 <p>This site was recently rewritten from an early version of React still on my GitHub to this form you see now I got rid of the Coding Astronomer domain.  It was done as an experiment to try to replicate a React-TS-JSX-like framework utilizing Python.  Since much of this site was based on original design work (which itself was based on another blog template I found online) and this has since been reworked manually with some claude help to move it over, it is a hodge podge of sourcing but mostly of my own design.</p>
             </div>
             
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Welcome</h1>
+            <h1></h1>
+                        
+
+    
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">Current Projects</h1>
             <p className="text-gray-700 leading-relaxed mb-8">
                 Welcome! Below you would find my latest posts on Medium. You can see my
                 <a className="text-blue-600 hover:text-blue-800 mx-1" href="/projects">projects here</a>

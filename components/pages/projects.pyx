@@ -168,7 +168,7 @@ def Projects() -> Any:
                 </Project>
             </div>
 
-            <h2 className="text-2xl font-semibold text-gray-700 mt-10 mb-4 border-b border-gray-200 pb-2">2008&#8211;2014</h2>
+            <h2 className="text-2xl font-semibold text-gray-700 mt-10 mb-4 border-b border-gray-200 pb-2">2008-2014</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <Project name="Night Ember" tech="JQuery, My Own CSS/Design" image="nightember.png" link="/examples/nightember/index.html">
                     A simple unit conversion app for astronomical units.

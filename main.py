@@ -15,6 +15,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 options = Options(
     head=(
         html.title("The Coding Astronomer"),
+        html.meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
         html.link({"rel": "stylesheet", "href": "/static/output.css"}),
     )
 )
