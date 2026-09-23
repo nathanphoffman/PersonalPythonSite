@@ -13,7 +13,7 @@ def Post(title: str = "", body: str = "", link: str = "", date: str = "") -> Any
             <div className="text-sm text-gray-500 mb-3">Posted on Medium: {date}</div>
             <div className="text-gray-700 leading-relaxed">{body}</div>
             <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-blue-600 hover:text-blue-800 text-sm font-medium">
-                View Full Post &rarr;
+                View Full Post
             </a>
         </div>
     )

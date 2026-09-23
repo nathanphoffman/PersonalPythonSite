@@ -30,7 +30,7 @@ def App() -> Any:
     elif path == "/about":
         content = <About />
     else:
-        content = <Home />
+        content = <Home on_navigate={handle_navigate} />
 
     content_class = "max-w-5xl mx-auto px-6 py-16 transition-opacity duration-300 " + ("opacity-0" if fading else "opacity-100")
 

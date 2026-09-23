@@ -8,6 +8,8 @@ dependencies = [
     "uvicorn[standard]==0.48.0",
     "aiofiles>=23.0",
     "starlette<0.21.0",
+    "feedparser>=6.0.14",
+    "httpx>=0.28.1",
 ]
 
 [dependency-groups]
