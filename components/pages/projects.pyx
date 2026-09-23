@@ -21,7 +21,7 @@ def Projects() -> Any:
 
             <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
-                <Project image="deor.png" link="https://deor.dev">
+                <Project image="deor.png" link="https://deor.dev" github="https://github.com/nathanphoffman/DeorLang">
                     <Title>Deor Programming Language</Title>
                     <Tech>Deor</Tech>
                     <Tech>Rust</Tech>
@@ -30,17 +30,26 @@ def Projects() -> Any:
                     A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with a demo Pi generator and a new-web
                     <a class="underline ml-1" target="_new" href="https://spec.deor.dev">spec</a>.
                 </Project>
-                <Project image="codingastronomer.png" link="https://newwebproject.org">
+                <Project image="newweb.png" link="https://newwebproject.org">
+                    <Title>Deor Pico (DPico)</Title>
+                    <Tech>Deor</Tech>
+                    <Tech>Rust</Tech>
+                    <Tech>HTML</Tech>
+                    <Tech>Tailwind</Tech>
+                    <Tech>TS</Tech>
+                    Outside of Deor's own transpiler this is the first decent sized product to be created with Deor. It is a terminal editor, which supports GIT, file browsing, mouse/keyboard controls, clipboard, etc.  Also currently adding spreadsheet support.
+                </Project>
+                <Project image="newweb.png" link="https://newwebproject.org">
                     <Title>The New Web Project</Title>
                     <Tech>WASM</Tech>
                     <Tech>TS/JS</Tech>
                     <Tech>Go</Tech>
                     <Tech>CSS</Tech>
                     <Tech>Electron</Tech>
-                    The New Web Project was the result of asking myself in the shower "what would the web look 1995 if we had the tools of 2026." The response was this growing project: 
-                    a markdown-driven web platform complete with wasm integration for scripting, forms, along with an electron browser.
+                    The New Web Project was the result of asking myself "what would the web look 1995 if we had the tools of 2026." The response was this growing project: 
+                    a markdown-driven web platform complete with wasm integration for scripting and forms, along with an electron browser.
                 </Project>
-                <Project image="codingastronomer.png" link="">
+                <Project>
                     <Title>Solar Bit</Title>
                     <Tech>C#</Tech>
                     <Tech>Go</Tech>
@@ -64,6 +73,12 @@ def Projects() -> Any:
                     <Tech>React</Tech>
                     <Tech>Bootstrap</Tech>
                     A Tool for comparing foods
+                </Project>
+                <Project image="codingastronomer.png" link="">
+                    <Title>Tiny Mighty (Char Sheet)</Title>
+                    <Tech>Next</Tech>
+                    <Tech>C#</Tech>
+                    This is an addition to the tiny mighty website, done with C# and Next, this is a work in progress.
                 </Project>
             </ProjectGrid>
 

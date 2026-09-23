@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:reactpy.dev)",
+      "WebSearch",
+      "WebFetch(domain:docs.pyscript.net)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:pypi.org)",
+      "WebFetch(domain:discuss.python.org)",
+      "Bash(gh api *)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(item['path']\\) for item in data.get\\('tree',[]\\)]\")",
+      "Bash(gh repo *)",
+      "WebFetch(domain:api.github.com)"
+    ]
+  }
+}

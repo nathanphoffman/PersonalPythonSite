@@ -24,7 +24,7 @@ def _take_slot(children: list, slot: str) -> tuple[list[str], list]:
 
 
 @component
-def Project(link: str = "", image: str = "", children=None) -> Any:
+def Project(link: str = "", image: str = "", github: str = "", children=None) -> Any:
     children = children or []
     names, children = _take_slot(children, "title")
     name = names[0] if names else ""
@@ -48,18 +48,30 @@ def Project(link: str = "", image: str = "", children=None) -> Any:
         for t in techs
     ]
 
+    github_el = (
+        <a target="_blank" rel="noopener noreferrer" href={github} className="text-sm text-blue-600 hover:text-blue-800 inline-block mb-2">
+            View Source on GitHub
+        </a>
+    ) if github else None
+
+    text_block = (
+        <div>
+            <h3 className="text-lg font-semibold mb-1">{title_el}</h3>
+            <div className="flex flex-wrap gap-1.5 mb-2">{tech_pills}</div>
+            {github_el}
+        </div>
+    )
+
+    content = (
+        <div className="flex gap-1">
+            <div className="flex-1 min-w-0">{img_el}</div>
+            <div className="flex-2 min-w-0">{text_block}</div>
+        </div>
+    ) if img_el else text_block
+
     return (
         <div className="border border-gray-200 rounded-lg p-5 bg-white hover:shadow-md transition-shadow">
-
-            <div className="flex gap-1"> 
-                <div className="flex-1 min-w-0">{img_el}</div>
-                <div className="flex-2 min-w-0">
-                    <div>
-                    <h3 className="text-lg font-semibold mb-1">{title_el}</h3>
-                    <div className="flex flex-wrap gap-1.5 mb-2">{tech_pills}</div>
-                    </div>
-                </div>
-            </div>
-            <p className="text-sm text-gray-600 mt-1">{children}</p>
+            {content}
+            <p className="text text-gray-600 mt-1">{children}</p>
         </div>
     )
