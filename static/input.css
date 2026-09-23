@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @source "../components/**/*.pyx";
+
+@theme {
+  --animate-fade-in: fade-in 0.6s cubic-bezier(0.32, 0, 0.67, 0) both;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
