@@ -16,7 +16,6 @@ from components.projects import (
     BggScraper,
     TinyMightyRpg,
     BerksHomes,
-    LuckyVitamin2022,
     LuckyVitamin2021,
     LuckyVitamin2020,
     VueCalendar,
@@ -88,12 +87,7 @@ def Projects() -> Any:
                 <BerksHomes />
             </ProjectGrid>
 
-            <ProjectTitle>2022</ProjectTitle>
-            <ProjectGrid>
-                <LuckyVitamin2022 />
-            </ProjectGrid>
-
-            <ProjectTitle>2021</ProjectTitle>
+            <ProjectTitle>2021-2022</ProjectTitle>
             <ProjectGrid>
                 <LuckyVitamin2021 />
             </ProjectGrid>

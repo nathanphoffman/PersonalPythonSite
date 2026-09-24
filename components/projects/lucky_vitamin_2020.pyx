@@ -8,10 +8,12 @@ from components.pages.children.project import Project, Title, Tech  # type: igno
 @component
 def LuckyVitamin2020() -> Any:
     return (
-        <Project image="codingastronomer.png" link="">
+        <Project image="luckyvitamin.png" link="">
             <Title>Lucky Vitamin</Title>
-            <Tech>React</Tech>
-            <Tech>Bootstrap</Tech>
-            Worked for Luckyvitamin
+            <Tech>JQuery</Tech>
+            <Tech>C#</Tech>
+            <Tech>.NET 4.x</Tech>
+            <Tech>Web API</Tech>
+            Worked for a vitamin company, worked on SEO, PDP (product detail page), the cart, and the backordering/instock inventory management system.
         </Project>
     )

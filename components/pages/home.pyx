@@ -3,7 +3,7 @@ from reactpy_jsx import jsx
 from typing import Any
 
 from components.pages.medium_feed import MediumFeed
-from components.projects import DeorLanguage, DeorPico, NewWebProject, WeatherSite
+from components.projects import DeorLanguage, DeorPico, FoodComparison, NewWebProject, TinyMightyRpg, WeatherSite
 from components.general.carousel import Carousel
 from components.router import NavLink
 
@@ -33,6 +33,8 @@ def Home(on_navigate=None) -> Any:
                 <DeorPico />
                 <NewWebProject />
                 <WeatherSite />
+                <FoodComparison />
+                <TinyMightyRpg />
             </Carousel>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Latest Blog Posts</h1>
             <div className="flex flex-wrap gap-4 mb-8">

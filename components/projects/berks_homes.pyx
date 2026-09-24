@@ -12,6 +12,6 @@ def BerksHomes() -> Any:
             <Title>Berks Homes</Title>
             <Tech>React</Tech>
             <Tech>Bootstrap</Tech>
-            Worked on Berks Homes's internal home modeling, design, and planning website, an internal tool used by employees.
+            Worked on Berks Homes's internal home modeling, design, and planning website, an internal tool used by employees. Mainly maintenance, bug fixing, and added to their model feature tooling. I also was exposed to Domain Driven Development.
         </Project>
     )

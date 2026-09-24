@@ -13,7 +13,6 @@ from components.projects.rpg_from_scratch import RpgFromScratch
 from components.projects.bgg_scraper import BggScraper
 from components.projects.tiny_mighty_rpg import TinyMightyRpg
 from components.projects.berks_homes import BerksHomes
-from components.projects.lucky_vitamin_2022 import LuckyVitamin2022
 from components.projects.lucky_vitamin_2021 import LuckyVitamin2021
 from components.projects.lucky_vitamin_2020 import LuckyVitamin2020
 from components.projects.vue_calendar import VueCalendar
@@ -54,7 +53,6 @@ __all__ = [
     "BggScraper",
     "TinyMightyRpg",
     "BerksHomes",
-    "LuckyVitamin2022",
     "LuckyVitamin2021",
     "LuckyVitamin2020",
     "VueCalendar",

@@ -8,7 +8,7 @@ from components.pages.children.project import Project, Title, Tech  # type: igno
 @component
 def WeatherSite() -> Any:
     return (
-        <Project image="weather-site.png" link="https://weather.nathanhoffman.me">
+        <Project image="weather-site.png" link="https://weather.nathanhoffman.me" github="https://github.com/nathanphoffman/WeatherSite">
             <Title>Weather Site</Title>
             <Tech>React</Tech>
             <Tech>Bootstrap</Tech>
