@@ -3,7 +3,7 @@ from reactpy_jsx import jsx
 from typing import Any
 
 from components.pages.medium_feed import MediumFeed
-from components.pages.project_catalog import DeorLanguage, DeorPico, NewWebProject, WeatherSite
+from components.projects import DeorLanguage, DeorPico, NewWebProject, WeatherSite
 from components.general.carousel import Carousel
 from components.router import NavLink
 

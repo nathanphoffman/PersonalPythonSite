@@ -2,7 +2,7 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
-from components.pages.project_catalog import (
+from components.projects import (
     DeorLanguage,
     DeorPico,
     NewWebProject,
