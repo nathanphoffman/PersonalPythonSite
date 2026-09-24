@@ -1,5 +1,6 @@
 import asyncio
-from reactpy import component, use_state
+import uuid
+from reactpy import component, use_ref, use_state
 from reactpy_jsx import jsx
 from reactpy.backend.hooks import use_location
 from typing import Any
@@ -17,6 +18,7 @@ def App() -> Any:
     location = use_location()
     path, set_path = use_state(location.pathname)
     fading, set_fading = use_state(False)
+    session_id = use_ref(uuid.uuid4().hex).current
 
     async def handle_navigate(new_path: str) -> None:
         set_fading(True)
@@ -24,6 +26,9 @@ def App() -> Any:
         set_path(new_path)
         await asyncio.sleep(0.05)
         set_fading(False)
+
+    def sync_path(new_path: str) -> None:
+        set_path(new_path)
 
     if path == "/projects":
         content = <Projects />
@@ -36,7 +41,7 @@ def App() -> Any:
 
     return (
         <div className="min-h-screen bg-white">
-            <PopStateListener onNavigate={handle_navigate} />
+            <PopStateListener onNavigate={handle_navigate} serverPath={path} onSync={sync_path} sessionId={session_id} />
             <Navbar on_navigate={handle_navigate} />
             <Header />
             <div className="animate-fade-in motion-reduce:animate-none">

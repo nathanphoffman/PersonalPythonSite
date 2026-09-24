@@ -23,7 +23,13 @@ export function NavLink({ href, onNavigate, className, children }) {
     return React.createElement("a", { href, className, onClick: handleClick }, children);
 }
 
-export function PopStateListener({ onNavigate }) {
+export function PopStateListener({ onNavigate, serverPath, onSync, sessionId }) {
+    // The server renders whatever page the tab first loaded, including after a reconnect
+    // (e.g. a server restart). If the address bar has moved on since, tell it which page to show.
+    // sessionId changes on every new connection, since this component itself survives reconnects.
+    React.useEffect(function () {
+        if (onSync && serverPath !== window.location.pathname) onSync(window.location.pathname);
+    }, [sessionId]);
     React.useEffect(function () {
         function handler() {
             if (onNavigate) onNavigate(window.location.pathname);
