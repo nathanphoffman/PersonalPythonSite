@@ -35,13 +35,15 @@ def App() -> Any:
     content_class = "max-w-5xl mx-auto px-6 py-16 transition-opacity duration-300 " + ("opacity-0" if fading else "opacity-100")
 
     return (
-        <div className="min-h-screen bg-white animate-fade-in motion-reduce:animate-none">
+        <div className="min-h-screen bg-white">
             <PopStateListener onNavigate={handle_navigate} />
             <Navbar on_navigate={handle_navigate} />
             <Header />
-            <div className={content_class}>
-                {content}
+            <div className="animate-fade-in motion-reduce:animate-none">
+                <div className={content_class}>
+                    {content}
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     )
