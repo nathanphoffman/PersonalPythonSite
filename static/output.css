@@ -242,6 +242,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .-mt-8 {
+    margin-top: calc(var(--spacing) * -8);
+  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
