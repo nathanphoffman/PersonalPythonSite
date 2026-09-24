@@ -4,7 +4,7 @@ from typing import Any
 
 from components.pages.medium_feed import MediumFeed
 from components.pages.project_catalog import DeorLanguage, DeorPico, NewWebProject, WeatherSite
-from components.pages.project_grid import ProjectGrid
+from components.general.carousel import Carousel
 from components.router import NavLink
 
 BLOG_BUTTON_CLASS = "inline-block px-10 py-3 text-base font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 transition-all duration-200"
@@ -28,12 +28,12 @@ def Home(on_navigate=None) -> Any:
                 <NavLink href="/projects" onNavigate={on_navigate} className="text-blue-600 hover:text-blue-800 mx-1">all of my projects here</NavLink>
                 or learn more about me on the about page at the links above. Further down you'll find my latest blog posts.
             </p>
-            <ProjectGrid>
+            <Carousel carousel_id="highlighted-projects">
                 <DeorLanguage />
                 <DeorPico />
                 <NewWebProject />
                 <WeatherSite />
-            </ProjectGrid>
+            </Carousel>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Latest Blog Posts</h1>
             <div className="flex flex-wrap gap-4 mb-8">
                 <a href="https://medium.com/@nathanphoffman" target="_blank" rel="noopener noreferrer" className={BLOG_BUTTON_CLASS}>Medium Blog</a>

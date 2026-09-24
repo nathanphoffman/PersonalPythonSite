@@ -10,6 +10,13 @@
   }
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Hide the static app shell (see shell.py) once ReactPy has rendered the real page. */
 #app:not(:empty) + #app-shell {
   display: none;

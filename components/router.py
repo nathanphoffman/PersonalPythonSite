@@ -34,6 +34,57 @@ export function PopStateListener({ onNavigate }) {
     return null;
 }
 
+export function ScrollButton({ targetId, direction, className, label, children }) {
+    function handleClick() {
+        const el = document.getElementById(targetId);
+        if (!el || !el.firstElementChild) return;
+        // Scroll by however many cards fit in view, so a click moves a full "page".
+        const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+        const cardStep = el.firstElementChild.offsetWidth + gap;
+        const perView = Math.max(1, Math.floor((el.clientWidth + gap) / cardStep));
+        el.scrollBy({ left: direction * perView * cardStep, behavior: "smooth" });
+    }
+    return React.createElement("button", { type: "button", className, onClick: handleClick, "aria-label": label }, children);
+}
+
+// Fades carousel cards based on how much of each is in view: fully visible cards are
+// opaque, cards peeking in from the edges fade down to 25%.
+export function CarouselFade({ targetId }) {
+    React.useEffect(function () {
+        let el = null;
+        let frame = 0;
+        function update() {
+            frame = 0;
+            const style = getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+            const left = rect.left + parseFloat(style.paddingLeft);
+            const right = rect.right - parseFloat(style.paddingRight);
+            for (const card of el.children) {
+                const r = card.getBoundingClientRect();
+                const visible = Math.max(0, Math.min(r.right, right) - Math.max(r.left, left));
+                card.style.opacity = String(0.25 + 0.75 * Math.min(1, visible / r.width));
+            }
+        }
+        function schedule() {
+            if (!frame) frame = requestAnimationFrame(update);
+        }
+        function attach() {
+            el = document.getElementById(targetId);
+            if (!el) { frame = requestAnimationFrame(attach); return; }
+            el.addEventListener("scroll", schedule, { passive: true });
+            window.addEventListener("resize", schedule);
+            update();
+        }
+        attach();
+        return function () {
+            cancelAnimationFrame(frame);
+            if (el) el.removeEventListener("scroll", schedule);
+            window.removeEventListener("resize", schedule);
+        };
+    }, [targetId]);
+    return null;
+}
+
 function wrapEventHandlers(props) {
     const newProps = Object.assign({}, props);
     for (const [key, value] of Object.entries(props)) {
@@ -58,4 +109,6 @@ function makeJsonSafeEventHandler(oldHandler) {
 """
 
 _module = module_from_string("spa-router", _JS)
-NavLink, PopStateListener = export(_module, ["NavLink", "PopStateListener"])
+NavLink, PopStateListener, ScrollButton, CarouselFade = export(
+    _module, ["NavLink", "PopStateListener", "ScrollButton", "CarouselFade"]
+)
