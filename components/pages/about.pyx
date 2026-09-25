@@ -31,16 +31,17 @@ def About() -> Any:
             </p>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">A New Surge</h2>
             <p>
-            Covid, combined with programming becoming more of a chore at some of my jobs caused me to start to do less of it as a hobby, however that has substantially changed. I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
+            Covid really was a hard time on me (and many others I am sure) and while my love of code dropped some, probably due to a lack of time, that has substantially changed. 
+            I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. 
+            I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
             </p>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Astronomy</h2>
             <p>
                 When I was young, my dad would look at the nightsky through a small spotting scope at planets,
                 planets that I had seen on science programs or Star Trek. I remember being utterly fascinated
-                that one could see something as distant as a planet through nothing more than glass, and today
-                I make treks every year far away from city lights. While I am not stargazing, I am
-                staying up-to-date with space news and looking back at the 1960s when spaceflight and science
-                were the rage of a generation.
+                that one could see something as distant as a planet through nothing more than glass, for quite a while I went out to dark sky sites and looked upwards, and while stargazing itself is not                     something I do as much anymore, I still dust off my telescope once in a while.
+                I also love staying up-to-date with deep space news (like JWST) and looking back at the 1960s when spaceflight and science
+                were the rage of a generation. 
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Other Interests</h2>
