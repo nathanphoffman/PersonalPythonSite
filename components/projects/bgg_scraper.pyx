@@ -8,10 +8,9 @@ from components.pages.children.project import Project, Title, Tech  # type: igno
 @component
 def BggScraper() -> Any:
     return (
-        <Project image="codingastronomer.png" link="">
+        <Project link="">
             <Title>BGG Scraper</Title>
-            <Tech>React</Tech>
-            <Tech>Bootstrap</Tech>
-            Worked on a Board Game Scraper
+            <Tech>Typescript</Tech>
+           This was originally created by hand as a scraper for BGG (Board Game Geek) platform to rank board games using a ranking system of my own design, and allowing game rankings to coalesce around certain weight preferences.
         </Project>
     )

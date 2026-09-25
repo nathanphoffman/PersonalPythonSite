@@ -22,13 +22,6 @@ def _to_plain_vdom(model: Any) -> Any:
         return model
     tag = model.get("tagName", "")
     attributes = {k: v for k, v in model.get("attributes", {}).items() if v is not None and not callable(v)}
-    if "importSource" in model:
-        # Custom JS components (NavLink) become plain links in the shell. They're kept
-        # invisible because the real ones briefly disappear while their JS module loads,
-        # then fade in; showing them here would make them flash.
-        tag = "a"
-        attributes = {k: v for k, v in attributes.items() if k in ("href", "className")}
-        attributes["className"] = attributes.get("className", "") + " invisible"
     for key in ("className", "class_name"):
         if key in attributes:
             attributes["class"] = attributes.pop(key)

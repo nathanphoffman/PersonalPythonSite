@@ -133,7 +133,7 @@ def Projects() -> Any:
                 <ApolloGame />
             </ProjectGrid>
 
-            <ProjectTitle>2008-2014</ProjectTitle>
+            <ProjectTitle>2007-2014</ProjectTitle>
             <ProjectGrid>
                 <NightEmber />
                 <Webiota />

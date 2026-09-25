@@ -1,6 +1,4 @@
-import asyncio
-import uuid
-from reactpy import component, use_ref, use_state
+from reactpy import component
 from reactpy_jsx import jsx
 from reactpy.backend.hooks import use_location
 from typing import Any
@@ -11,41 +9,26 @@ from components.general.footer import Footer
 from components.pages.home import Home
 from components.pages.about import About
 from components.pages.projects import Projects
-from components.router import PopStateListener
 
 @component
 def App() -> Any:
-    location = use_location()
-    path, set_path = use_state(location.pathname)
-    fading, set_fading = use_state(False)
-    session_id = use_ref(uuid.uuid4().hex).current
-
-    async def handle_navigate(new_path: str) -> None:
-        set_fading(True)
-        await asyncio.sleep(0.3)
-        set_path(new_path)
-        await asyncio.sleep(0.05)
-        set_fading(False)
-
-    def sync_path(new_path: str) -> None:
-        set_path(new_path)
+    # Links are plain <a> tags that do a full page load, so the address bar is the only
+    # source of truth for which page to show.
+    path = use_location().pathname
 
     if path == "/projects":
         content = <Projects />
     elif path == "/about":
         content = <About />
     else:
-        content = <Home on_navigate={handle_navigate} />
-
-    content_class = "max-w-5xl mx-auto px-6 py-16 transition-opacity duration-300 " + ("opacity-0" if fading else "opacity-100")
+        content = <Home />
 
     return (
         <div className="min-h-screen bg-white">
-            <PopStateListener onNavigate={handle_navigate} serverPath={path} onSync={sync_path} sessionId={session_id} />
-            <Navbar on_navigate={handle_navigate} />
+            <Navbar />
             <Header />
             <div className="animate-fade-in motion-reduce:animate-none">
-                <div className={content_class}>
+                <div className="max-w-5xl mx-auto px-6 py-16">
                     {content}
                 </div>
                 <Footer />

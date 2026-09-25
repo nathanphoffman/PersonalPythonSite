@@ -15,6 +15,6 @@ def DeorPico() -> Any:
             <Tech>HTML</Tech>
             <Tech>Tailwind</Tech>
             <Tech>TS</Tech>
-            This is the first decent sized product to be created with Deor. It is a terminal editor, which supports GIT, file browsing, mouse/keyboard controls, clipboard, etc.  Also currently adding spreadsheet support.
+            This is the first decent sized product to be created with Deor. It is a terminal editor, which supports GIT, file browsing, mouse/keyboard controls, clipboard, etc.  Also currently adding spreadsheet support. It was my answer to being frustrated with VSCode and high-memory usage of IDEs -- and yet not being able to find a decent terminal editor that didn't have VI controls.
         </Project>
     )

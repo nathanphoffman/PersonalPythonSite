@@ -4,40 +4,23 @@ _JS = """
 import * as React from "https://esm.sh/react@18";
 import * as ReactDOM from "https://esm.sh/react-dom@18";
 
+// ReactPy's client can call bind() twice for the same node when a re-render lands before the
+// first mount finishes. Two React roots in one node fight over its children and eventually
+// throw, which freezes all page updates, so keep a single root per node.
 export function bind(node, config) {
-    const root = ReactDOM.createRoot(node);
+    function getRoot() {
+        if (!node.__reactRoot) node.__reactRoot = ReactDOM.createRoot(node);
+        return node.__reactRoot;
+    }
     return {
         create: (component, props, children) =>
             React.createElement(component, wrapEventHandlers(props), ...children),
-        render: (element) => root.render(element),
-        unmount: () => root.unmount(),
+        render: (element) => getRoot().render(element),
+        unmount: () => {
+            if (node.__reactRoot) node.__reactRoot.unmount();
+            delete node.__reactRoot;
+        },
     };
-}
-
-export function NavLink({ href, onNavigate, className, children }) {
-    function handleClick(e) {
-        e.preventDefault();
-        window.history.pushState(null, "", href);
-        if (onNavigate) onNavigate(href);
-    }
-    return React.createElement("a", { href, className, onClick: handleClick }, children);
-}
-
-export function PopStateListener({ onNavigate, serverPath, onSync, sessionId }) {
-    // The server renders whatever page the tab first loaded, including after a reconnect
-    // (e.g. a server restart). If the address bar has moved on since, tell it which page to show.
-    // sessionId changes on every new connection, since this component itself survives reconnects.
-    React.useEffect(function () {
-        if (onSync && serverPath !== window.location.pathname) onSync(window.location.pathname);
-    }, [sessionId]);
-    React.useEffect(function () {
-        function handler() {
-            if (onNavigate) onNavigate(window.location.pathname);
-        }
-        window.addEventListener("popstate", handler);
-        return function () { window.removeEventListener("popstate", handler); };
-    }, []);
-    return null;
 }
 
 export function ScrollButton({ targetId, direction, className, label, children }) {
@@ -115,6 +98,4 @@ function makeJsonSafeEventHandler(oldHandler) {
 """
 
 _module = module_from_string("spa-router", _JS)
-NavLink, PopStateListener, ScrollButton, CarouselFade = export(
-    _module, ["NavLink", "PopStateListener", "ScrollButton", "CarouselFade"]
-)
+ScrollButton, CarouselFade = export(_module, ["ScrollButton", "CarouselFade"])

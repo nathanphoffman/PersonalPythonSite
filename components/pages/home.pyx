@@ -5,13 +5,12 @@ from typing import Any
 from components.pages.medium_feed import MediumFeed
 from components.projects import DeorLanguage, DeorPico, FoodComparison, NewWebProject, TinyMightyRpg, WeatherSite
 from components.general.carousel import Carousel
-from components.router import NavLink
 
 BLOG_BUTTON_CLASS = "inline-block px-10 py-3 text-base font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 transition-all duration-200"
 
 
 @component
-def Home(on_navigate=None) -> Any:
+def Home() -> Any:
     return (
         <div>
             <div className="flex items-center justify-between bg-blue-100 text-blue-800 px-4 py-3 rounded border border-blue-300 -mt-8 mb-6">
@@ -24,9 +23,7 @@ def Home(on_navigate=None) -> Any:
     
             <h1 className="text-4xl font-bold text-gray-900 mb-6">Highlighted Projects</h1>
             <p className="text-gray-700 leading-relaxed mb-6">
-                Below are a few of the projects I'm most excited about right now. You can see
-                <NavLink href="/projects" onNavigate={on_navigate} className="text-blue-600 hover:text-blue-800 mx-1">all of my projects here</NavLink>
-                or learn more about me on the about page at the links above. Further down you'll find my latest blog posts.
+                See a full list of <a href="/projects" className="text-blue-600 hover:text-blue-800 mx-1">all of my projects here</a>.
             </p>
             <Carousel carousel_id="highlighted-projects">
                 <DeorLanguage />

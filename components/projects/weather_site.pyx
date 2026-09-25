@@ -12,6 +12,6 @@ def WeatherSite() -> Any:
             <Title>Weather Site</Title>
             <Tech>React</Tech>
             <Tech>Bootstrap</Tech>
-            A Weather Site that simplifies weather to just a handful of metrics
+            For a while I had a console application I wrote by hand which scraped weather information from NOAA's web page and displayed it in a very readable format (all wind, rain, thunder, etc. was rolled into a 'Storm Factor'). I later pair-coded with claude to create a web version of the console app, and also rewrote the scraper to pull from NOAA's api.
         </Project>
     )
