@@ -14,13 +14,14 @@ FEED_XML = """<?xml version="1.0"?>
 
 @pytest.fixture(autouse=True)
 def reset_cache():
+    # The cache is module-level state, so clear it to keep tests independent
     medium._cache = []
     medium._cache_time = 0.0
 
 
-def test_make_snippet_strips_tags_and_figures():
-    raw = "<p>Hello <b>world</b></p><figure><img src='x'><figcaption>cap</figcaption></figure>"
-    assert medium._make_snippet(raw) == "Hello world"
+def test_make_snippet_removes_html():
+    raw_html = "<p>Hello <b>world</b></p><figure><img src='x'><figcaption>cap</figcaption></figure>"
+    assert medium._make_snippet(raw_html) == "Hello world"
 
 
 def test_make_snippet_truncates_on_word_boundary():
@@ -34,7 +35,7 @@ def test_to_post_handles_missing_fields():
     assert (post.title, post.link, post.date, post.snippet) == ("", "", "", "")
 
 
-def test_to_post_formats_date_and_strips_link_query():
+def test_to_post_cleans_entry_fields():
     entry = {
         "title": "T",
         "link": "https://medium.com/p/1?source=rss",

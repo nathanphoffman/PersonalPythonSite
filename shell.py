@@ -20,12 +20,14 @@ def _plain_attributes(attributes: dict[str, Any]) -> dict[str, Any]:
     plain = {
         name: value
         for name, value in attributes.items()
+        # Event handlers are Python callables and can't be written into static HTML
         if value is not None and not callable(value)
     }
 
-    for key in ("className", "class_name"):
-        if key in plain:
-            plain["class"] = plain.pop(key)
+    # The server-rendered HTML only understands the plain `class` attribute
+    for class_attribute in ("className", "class_name"):
+        if class_attribute in plain:
+            plain["class"] = plain.pop(class_attribute)
 
     return plain
 

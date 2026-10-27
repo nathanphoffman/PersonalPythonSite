@@ -14,6 +14,19 @@ class _MultiSuffixFinder(MetaPathFinder):
     def __init__(self, suffixes: list[str]) -> None:
         self.suffixes = suffixes
 
+    def _find_module_file(self, fullname: str, directories: list[str]) -> Path | None:
+        # Only the last dotted part names the file: "components.app" lives in components/app.pyx
+        module_name = fullname.rsplit(".", 1)[-1]
+
+        for directory in directories:
+            for suffix in self.suffixes:
+                candidate = Path(directory) / f"{module_name}{suffix}"
+
+                if candidate.exists():
+                    return candidate
+
+        return None
+
     def find_spec(
         self,
         fullname: str,
@@ -21,19 +34,17 @@ class _MultiSuffixFinder(MetaPathFinder):
         target: ModuleType | None = None,  # noqa: ARG002
     ) -> ModuleSpec | None:
         """Find a module file ending in one of our suffixes (e.g. .pyx) and load it through pyjsx."""
+        module_file = self._find_module_file(fullname, list(path) if path else sys.path)
 
-        for directory in (list(path) if path else sys.path):
-            for suffix in self.suffixes:
-                full_path = Path(directory) / f"{fullname.rsplit('.', 1)[-1]}{suffix}"
+        if module_file is None:
+            return None
 
-                if full_path.exists():
-                    loader = PyJSXLoader(fullname, str(full_path))
-
-                    return importlib.util.spec_from_loader(fullname, loader)
-
-        return None
+        loader = PyJSXLoader(fullname, str(module_file))
+        return importlib.util.spec_from_loader(fullname, loader)
 
 
 def setup(suffixes: list[str] | None = None) -> None:
     register_jsx()
+
+    # Appended (not inserted) so normal .py imports are still found first
     sys.meta_path.append(_MultiSuffixFinder(suffixes or [".px", ".pyx"]))

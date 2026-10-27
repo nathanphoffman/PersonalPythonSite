@@ -13,6 +13,7 @@ from starlette.staticfiles import StaticFiles
 
 from shell import render_shell_html
 
+# Must be named `app`: the deploy start command is `uvicorn main:app`
 app = Starlette()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -22,6 +23,7 @@ options = Options(
         html.meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
         html.link({"rel": "stylesheet", "href": "/static/output.css"}),
     ),
+    # We serve the index ourselves below, so ReactPy must not register its own
     serve_index_route=False,
 )
 
@@ -32,6 +34,7 @@ _index_html: str | None = None
 
 
 async def serve_index(request: Request) -> HTMLResponse:
+    # Built once on first request, since the shell never changes between visits
     global _index_html
 
     if _index_html is None:
@@ -44,5 +47,6 @@ async def serve_index(request: Request) -> HTMLResponse:
     return HTMLResponse(_index_html)
 
 
+# Every path serves the same page so client-side routing handles deep links and refreshes
 app.add_route("/", serve_index)
 app.add_route("/{path:path}", serve_index)

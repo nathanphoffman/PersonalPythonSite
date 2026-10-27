@@ -21,6 +21,7 @@ def _snake_case_props(props: dict[str, Any] | None) -> dict[str, Any]:
     return {_to_snake_case(name): value for name, value in (props or {}).items()}
 
 
+# pyjsx passes list comprehensions as a single list child, so one level of nesting is expected
 def _flatten_children(children: tuple[Any, ...]) -> list[Any]:
     """Flatten one level of nested lists and drop None children."""
     flat: list[Any] = []

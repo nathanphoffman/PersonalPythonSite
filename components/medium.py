@@ -24,6 +24,7 @@ class MediumPost:
     snippet: str
 
 
+# Module-level cache so repeat visits don't hit Medium on every page load
 _cache: list[MediumPost] = []
 _cache_time = 0.0
 
@@ -43,6 +44,7 @@ def _make_snippet(raw_html: str) -> str:
     if len(text) <= SNIPPET_LENGTH:
         return text
 
+    # Cut at a word boundary so the snippet doesn't end mid-word
     return text[:SNIPPET_LENGTH].rsplit(" ", 1)[0] + "…"
 
 
@@ -55,6 +57,7 @@ def _to_post(entry: Any) -> MediumPost:
 
     return MediumPost(
         title=entry.get("title", ""),
+        # Medium appends tracking params (?source=rss) that we don't want in links
         link=entry.get("link", "").split("?")[0],
         date=date,
         snippet=_make_snippet(raw_html),
@@ -81,6 +84,7 @@ async def get_posts() -> list[MediumPost]:
         _cache = [_to_post(entry) for entry in feed.entries]
         _cache_time = time.time()
     except (httpx.HTTPError, ValueError) as error:
+        # Keep showing the last good posts rather than an error if Medium is down
         logger.warning("Medium feed fetch failed, serving cached posts: %s", error)
 
     return _cache

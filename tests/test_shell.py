@@ -5,7 +5,7 @@ def test_non_dict_is_returned_unchanged():
     assert _to_plain_vdom("text") == "text"
 
 
-def test_class_name_becomes_class_and_callables_and_none_are_dropped():
+def test_attributes_are_cleaned_for_plain_html():
     model = {
         "tagName": "div",
         "attributes": {"className": "box", "onClick": lambda: None, "id": None},
