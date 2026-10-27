@@ -24,6 +24,7 @@ options = Options(
     ),
     serve_index_route=False,
 )
+
 configure(app, App, options=options)
 
 # Serve our own index page so it includes the static app shell (see shell.py).
@@ -32,12 +33,14 @@ _index_html: str | None = None
 
 async def serve_index(request: Request) -> HTMLResponse:
     global _index_html
+
     if _index_html is None:
         shell_html = await render_shell_html()
         _index_html = read_client_index_html(options).replace(
             '<div id="app"></div>',
             f'<div id="app"></div><div id="app-shell">{shell_html}</div>',
         )
+
     return HTMLResponse(_index_html)
 
 

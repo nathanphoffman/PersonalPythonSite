@@ -21,12 +21,16 @@ class _MultiSuffixFinder(MetaPathFinder):
         target: ModuleType | None = None,  # noqa: ARG002
     ) -> ModuleSpec | None:
         """Find a module file ending in one of our suffixes (e.g. .pyx) and load it through pyjsx."""
+
         for directory in (list(path) if path else sys.path):
             for suffix in self.suffixes:
                 full_path = Path(directory) / f"{fullname.rsplit('.', 1)[-1]}{suffix}"
+
                 if full_path.exists():
                     loader = PyJSXLoader(fullname, str(full_path))
+
                     return importlib.util.spec_from_loader(fullname, loader)
+
         return None
 
 

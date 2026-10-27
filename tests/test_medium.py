@@ -41,6 +41,7 @@ def test_to_post_formats_date_and_strips_link_query():
         "published_parsed": time.strptime("2024-03-05", "%Y-%m-%d"),
         "summary": "<p>Body</p>",
     }
+
     post = medium._to_post(entry)
     assert post.link == "https://medium.com/p/1"
     assert post.date == "March 05, 2024"
@@ -60,6 +61,7 @@ class _FakeClient:
     async def get(self, _url):
         if self.error:
             raise self.error
+
         return self.response
 
 

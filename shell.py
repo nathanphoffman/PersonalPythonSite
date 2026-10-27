@@ -22,16 +22,20 @@ def _plain_attributes(attributes: dict[str, Any]) -> dict[str, Any]:
         for name, value in attributes.items()
         if value is not None and not callable(value)
     }
+
     for key in ("className", "class_name"):
         if key in plain:
             plain["class"] = plain.pop(key)
+
     return plain
 
 
 def _to_plain_vdom(model: Any) -> Any:
     """Turn a rendered ReactPy model into plain HTML elements vdom_to_html can handle."""
+
     if not isinstance(model, dict):
         return model
+
     return {
         "tagName": model.get("tagName", ""),
         "attributes": _plain_attributes(model.get("attributes", {})),
@@ -47,4 +51,5 @@ def _Shell() -> Any:
 async def render_shell_html() -> str:
     async with Layout(_Shell()) as layout:
         update = await layout.render()
+
     return vdom_to_html(_to_plain_vdom(update["model"]))
