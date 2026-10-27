@@ -19,7 +19,7 @@ def MediumFeed() -> Any:
     if posts:
         return (
             <div className="animate-fade-in">
-                {[<Post key={p.link} title={p.title} body={p.snippet} link={p.link} date={p.date} /> for p in posts]}
+                {[<Post key={post.link} title={post.title} body={post.snippet} link={post.link} date={post.date} /> for post in posts]}
             </div>
         )
 

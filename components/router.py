@@ -1,4 +1,4 @@
-from reactpy.web import module_from_string, export
+from reactpy.web import export, module_from_string
 
 _JS = """
 import * as React from "https://esm.sh/react@18";
@@ -33,7 +33,11 @@ export function ScrollButton({ targetId, direction, className, label, children }
         const perView = Math.max(1, Math.floor((el.clientWidth + gap) / cardStep));
         el.scrollBy({ left: direction * perView * cardStep, behavior: "smooth" });
     }
-    return React.createElement("button", { type: "button", className, onClick: handleClick, "aria-label": label }, children);
+    return React.createElement(
+        "button",
+        { type: "button", className, onClick: handleClick, "aria-label": label },
+        children,
+    );
 }
 
 // Fades carousel cards based on how much of each is in view: fully visible cards are

@@ -2,6 +2,7 @@ import pyjsx_setup  # registers .px / .pyx import hook — must be first
 
 pyjsx_setup.setup()
 
+from components.app import App  # type: ignore[import-not-found]
 from reactpy import html
 from reactpy.backend._common import read_client_index_html
 from reactpy.backend.starlette import Options, configure
@@ -10,7 +11,6 @@ from starlette.requests import Request
 from starlette.responses import HTMLResponse
 from starlette.staticfiles import StaticFiles
 
-from components.app import App  # type: ignore[import-not-found]
 from shell import render_shell_html
 
 app = Starlette()

@@ -8,27 +8,34 @@ CSS in static/input.css hides the shell.
 
 from typing import Any
 
+from components.general.header import Header
+from components.general.navbar import Navbar
 from reactpy import component, html
 from reactpy.core.layout import Layout
 from reactpy.utils import vdom_to_html
 
-from components.general.header import Header
-from components.general.navbar import Navbar
+
+def _plain_attributes(attributes: dict[str, Any]) -> dict[str, Any]:
+    """Drop None and callable attributes (event handlers) and rename className to class."""
+    plain = {
+        name: value
+        for name, value in attributes.items()
+        if value is not None and not callable(value)
+    }
+    for key in ("className", "class_name"):
+        if key in plain:
+            plain["class"] = plain.pop(key)
+    return plain
 
 
 def _to_plain_vdom(model: Any) -> Any:
     """Turn a rendered ReactPy model into plain HTML elements vdom_to_html can handle."""
     if not isinstance(model, dict):
         return model
-    tag = model.get("tagName", "")
-    attributes = {k: v for k, v in model.get("attributes", {}).items() if v is not None and not callable(v)}
-    for key in ("className", "class_name"):
-        if key in attributes:
-            attributes["class"] = attributes.pop(key)
     return {
-        "tagName": tag,
-        "attributes": attributes,
-        "children": [_to_plain_vdom(c) for c in model.get("children", [])],
+        "tagName": model.get("tagName", ""),
+        "attributes": _plain_attributes(model.get("attributes", {})),
+        "children": [_to_plain_vdom(child) for child in model.get("children", [])],
     }
 
 
