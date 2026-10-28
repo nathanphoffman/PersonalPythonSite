@@ -13,6 +13,7 @@ PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 def transpile_pyx_files(pyx_files: list[pathlib.Path], output_dir: pathlib.Path) -> None:
     """Write a plain .py copy of each .pyx file so mypy can check it."""
 
+    # mypy can't read .pyx, so check the transpiled Python instead
     for pyx in pyx_files:
         compiled = transpile(pyx.read_text())
         (output_dir / pyx.with_suffix(".py").name).write_text(compiled)
@@ -25,6 +26,7 @@ def run_mypy(target_dir: pathlib.Path) -> int:
             "--config-file", str(PROJECT_ROOT / "pyproject.toml"),
             str(target_dir),
         ],
+        # Lets mypy resolve imports like `reactpy_jsx` that live at the project root
         env={**os.environ, "MYPYPATH": str(PROJECT_ROOT)},
     )
 

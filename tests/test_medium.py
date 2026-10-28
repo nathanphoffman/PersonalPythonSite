@@ -49,6 +49,7 @@ def test_to_post_cleans_entry_fields():
     assert post.snippet == "Body"
 
 
+# Stands in for httpx.AsyncClient so tests never touch the network
 class _FakeClient:
     def __init__(self, response=None, error=None, **_kwargs):
         self.response, self.error = response, error

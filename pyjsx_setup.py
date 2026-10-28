@@ -40,6 +40,7 @@ class _MultiSuffixFinder(MetaPathFinder):
             return None
 
         loader = PyJSXLoader(fullname, str(module_file))
+
         return importlib.util.spec_from_loader(fullname, loader)
 
 

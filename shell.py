@@ -47,10 +47,12 @@ def _to_plain_vdom(model: Any) -> Any:
 
 @component
 def _Shell() -> Any:
+    # Same wrapper classes as the live app, so the swap from shell to app doesn't shift layout
     return html.div({"class_name": "min-h-screen bg-white"}, Navbar(), Header())
 
 
 async def render_shell_html() -> str:
+    # Render once through ReactPy's own layout so the shell matches what the client will draw
     async with Layout(_Shell()) as layout:
         update = await layout.render()
 

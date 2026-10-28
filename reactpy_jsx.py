@@ -36,6 +36,7 @@ def _flatten_children(children: tuple[Any, ...]) -> list[Any]:
 def _unwrap_children(children: tuple[Any, ...]) -> list[Any]:
     """Use a single list child as the children list, otherwise all children."""
 
+    # pyjsx wraps list comprehension results in one list child
     if children and isinstance(children[0], list):
         return children[0]
 
@@ -93,6 +94,7 @@ def jsx(
     if isinstance(element_type, str):
         return _html_element(element_type, props, children)
 
+    # ReactPy's @component decorator sets __wrapped__, which tells components from VDOM constructors
     if hasattr(element_type, "__wrapped__"):
         return _component_element(element_type, props, children)
 
