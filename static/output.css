@@ -305,6 +305,12 @@
       display: none;
     }
   }
+  .line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
   .block {
     display: block;
   }
@@ -672,6 +678,12 @@
   }
   .capitalize {
     text-transform: capitalize;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .underline {
     text-decoration-line: underline;

@@ -2,6 +2,7 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
+from components.pages.highlighted_posts import HighlightedPosts
 from components.pages.medium_feed import MediumFeed
 from components.projects import DeorLanguage, DeorPico, FoodComparison, NewWebProject, TinyMightyRpg, WeatherSite
 from components.general.carousel import Carousel
@@ -34,11 +35,13 @@ def Home() -> Any:
                 <FoodComparison />
                 <TinyMightyRpg />
             </Carousel>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Latest Blog Posts</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Highlighted Blog Posts</h1>
             <div className="flex flex-wrap gap-4 mb-8">
                 <a href="https://medium.com/@nathanphoffman" target="_blank" rel="noopener noreferrer" className={BLOG_BUTTON_CLASS}>Medium Blog</a>
                 <a href="https://nathanhoffman.me" target="_blank" rel="noopener noreferrer" className={BLOG_BUTTON_CLASS}>Personal Blog Site</a>
             </div>
+            <HighlightedPosts />
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Latest Blog Posts</h1>
             <MediumFeed />
             <a href="https://medium.com/@nathanphoffman" target="_blank" rel="noopener noreferrer" className="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium">
                 More Posts on Medium

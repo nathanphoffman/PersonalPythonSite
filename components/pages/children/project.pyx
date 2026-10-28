@@ -1,6 +1,7 @@
 from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
+from components.general.card import Card
 from components.utils import children_text
 
 
@@ -30,48 +31,6 @@ def Project(link: str = "", image: str = "", github: str = "", children=None) ->
     name = names[0] if names else ""
     techs, children = _take_slot(children, "tech")
 
-    if link:
-        title_el = (
-            <a target="_blank" rel="noopener noreferrer" href={link} className="text-blue-600 hover:text-blue-800">
-                {name}
-            </a>
-        )
-    else:
-        title_el = <span className="text-gray-900">{name}</span>
+    image_src = "/static/img/" + image if image else ""
 
-    img_el = None
-    if image:
-        img_el = <img src={"/static/img/" + image} alt={name} className="shadow-lg w-30 h-30 object-cover rounded mb-3" />
-
-    tech_pills = [
-        <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded inline-block">{t}</span>
-        for t in techs
-    ]
-
-    github_el = (
-        <a target="_blank" rel="noopener noreferrer" href={github} className="text-sm text-blue-600 hover:text-blue-800 inline-block mb-2">
-            View Source on GitHub
-        </a>
-    ) if github else None
-
-    text_block = (
-        <div>
-            <h3 className="text-lg font-semibold mb-1">{title_el}</h3>
-            <div className="flex flex-wrap gap-1.5 mb-2">{tech_pills}</div>
-            {github_el}
-        </div>
-    )
-
-    content = (
-        <div className="flex gap-1">
-            <div className="flex-1 min-w-0">{img_el}</div>
-            <div className="flex-2 min-w-0">{text_block}</div>
-        </div>
-    ) if img_el else text_block
-
-    return (
-        <div className="border border-gray-200 rounded-lg p-5 bg-white hover:shadow-md transition-shadow">
-            {content}
-            <p className="text text-gray-600 mt-1">{children}</p>
-        </div>
-    )
+    return <Card title={name} link={link} image_src={image_src} tags={techs} github={github}>{children}</Card>

@@ -27,6 +27,7 @@ class MediumPost:
     link: str
     date: str
     snippet: str
+    image: str = ""
 
 
 # Module-level cache so repeat visits don't hit Medium on every page load
@@ -39,6 +40,19 @@ _FIGURE_BLOCK = re.compile(r"<(figure|figcaption)[^>]*>.*?</\1>", re.S)
 
 # Any single HTML tag, e.g. <p> or <a href="...">
 _HTML_TAG = re.compile(r"<[^>]+>")
+
+
+# src of an <img> tag, e.g. <img src="https://cdn-images-1.medium.com/...">
+_IMG_SRC = re.compile(r'<img[^>]+src="([^"]+)"')
+
+
+def _first_image(raw_html: str) -> str:
+    for src in _IMG_SRC.findall(raw_html):
+        # Medium ends every post with a 1x1 tracking pixel, which is not a real preview
+        if "/_/stat" not in src:
+            return src
+
+    return ""
 
 
 def _make_snippet(raw_html: str) -> str:
@@ -68,6 +82,7 @@ def _to_post(entry: Any) -> MediumPost:
         link=entry.get("link", "").split("?")[0],
         date=date,
         snippet=_make_snippet(raw_html),
+        image=_first_image(raw_html),
     )
 
 
@@ -96,3 +111,4 @@ async def get_posts() -> list[MediumPost]:
         logger.warning("Medium feed fetch failed, serving cached posts: %s", error)
 
     return _cache
+
