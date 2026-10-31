@@ -2,7 +2,7 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
-from projects import (
+from components.projects import (
     CodeQualityScript,
     ContactApp,
     TzaarNet,
@@ -50,8 +50,8 @@ from projects import (
     BlueSkyEnvySite,
     GraphingTool,
 )
-from components.project_grid import ProjectGrid
-from components.project_title import ProjectTitle
+from components.projects.project_grid import ProjectGrid
+from components.projects.project_title import ProjectTitle
 
 @component
 def Projects() -> Any:

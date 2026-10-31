@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @source "../components/**/*.pyx";
 @source "../pages/**/*.pyx";
-@source "../projects/**/*.pyx";
 
 @theme {
   --animate-fade-in: fade-in 0.4s cubic-bezier(0.32, 0, 0.67, 0) backwards;

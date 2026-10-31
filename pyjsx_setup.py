@@ -15,7 +15,7 @@ class _MultiSuffixFinder(MetaPathFinder):
         self.suffixes = suffixes
 
     def _find_module_file(self, fullname: str, directories: list[str]) -> Path | None:
-        # Only the last dotted part names the file: "components.app" lives in components/app.pyx
+        # Only the last dotted part names the file: "pages.home" lives in pages/home.pyx
         module_name = fullname.rsplit(".", 1)[-1]
 
         for directory in directories:

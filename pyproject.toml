@@ -17,10 +17,10 @@ dev = ["mypy==1.10.*", "pytest>=8.0", "pytest-asyncio>=0.23"]
 
 [tool.mypy]
 strict = true
-exclude = ["(components|pages|projects)/.*\\.pyx?$"]
+exclude = ["(components|pages)/.*\\.pyx?$"]
 
 [[tool.mypy.overrides]]
-module = ["reactpy.*", "pyjsx.*", "components.*", "pages.*", "projects.*"]
+module = ["reactpy.*", "pyjsx.*", "components.*", "pages.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

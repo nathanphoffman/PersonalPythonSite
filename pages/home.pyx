@@ -2,10 +2,10 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
-from components.highlighted_posts import HighlightedPosts
-from components.medium_feed import MediumFeed
-from projects import SpaceGame3d, DeorLanguage, DeorPico, FoodComparison, NewWebProject, TinyMightyRpg, WeatherSite
-from components.carousel import Carousel
+from components.home.highlighted_posts import HighlightedPosts
+from components.home.medium_feed import MediumFeed
+from components.projects import SpaceGame3d, DeorLanguage, DeorPico, FoodComparison, NewWebProject, TinyMightyRpg, WeatherSite
+from components.home.carousel import Carousel
 
 BLOG_BUTTON_CLASS = "inline-block px-10 py-3 text-base font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 transition-all duration-200"
 

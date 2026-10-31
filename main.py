@@ -2,7 +2,7 @@ import pyjsx_setup  # registers .px / .pyx import hook — must be first
 
 pyjsx_setup.setup()
 
-from components.app import App  # type: ignore[import-not-found]
+from app import App  # type: ignore[import-not-found]
 from reactpy import html
 from reactpy.backend._common import read_client_index_html
 from reactpy.backend.starlette import Options, configure

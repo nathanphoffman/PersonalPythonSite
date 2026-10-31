@@ -1,0 +1,20 @@
+from reactpy import component
+from reactpy_jsx import jsx
+from typing import Any
+
+from components.projects.project import Project, Title, Tech  # type: ignore[import-not-found]
+
+
+@component
+def DeorLanguage() -> Any:
+    return (
+        <Project image="deor.png" link="https://deor.dev" github="https://github.com/nathanphoffman/DeorLang">
+            <Title>Deor Programming Language</Title>
+            <Tech>Deor</Tech>
+            <Tech>Rust</Tech>
+            <Tech>Tailwind</Tech>
+            <Tech>TS/JS</Tech>
+             This is a programming language of my dreams balancing various ideas like imperative-first, no-nulls, static-typing, limited syntax, and avoidance of symbollic language. A programming language that transpiles to rust, features a small from scratch vanilla js landing page, and a large transpiler, along with a demo Pi generator and a new-web
+            <a class="underline ml-1" target="_new" href="https://spec.deor.dev">spec</a>.
+        </Project>
+    )
