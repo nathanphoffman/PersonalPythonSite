@@ -1,5 +1,15 @@
 """Every project card, one per file. Import from here, e.g. `from components.projects import DeorLanguage`."""
 
+from components.projects.fairy_tale_adventure import FairyTaleAdventure
+from components.projects.graph_data import GraphData
+from components.projects.nh_blog import NhBlog
+from components.projects.project_34004 import Project34004
+from components.projects.space_game_3d import SpaceGame3d
+from components.projects.val_outcast import ValOutcast
+from components.projects.code_quality import CodeQualityScript
+from components.projects.contact_app import ContactApp
+from components.projects.proton_drive_sync import ProtonDriveSync
+from components.projects.tzaar_net import TzaarNet
 from components.projects.accounting_check import AccountingCheck
 from components.projects.apollo_game import ApolloGame
 from components.projects.berks_homes import BerksHomes
@@ -27,12 +37,10 @@ from components.projects.night_ember import NightEmber
 from components.projects.operations_checklist import OperationsChecklist
 from components.projects.periodic_table import PeriodicTable
 from components.projects.photo_gallery import PhotoGallery
-from components.projects.react_native_testing import ReactNativeTesting
 from components.projects.real_estate_site import RealEstateSite
 from components.projects.revenue_management_pricing import RevenueManagementPricing
 from components.projects.rpg_from_scratch import RpgFromScratch
 from components.projects.solar_bit import SolarBit
-from components.projects.tiny_mighty_char_sheet import TinyMightyCharSheet
 from components.projects.tiny_mighty_rpg import TinyMightyRpg
 from components.projects.vexmen_robotics import VexmenRobotics
 from components.projects.vue_calendar import VueCalendar
@@ -40,14 +48,22 @@ from components.projects.weather_site import WeatherSite
 from components.projects.webiota import Webiota
 
 __all__ = [
+    "CodeQualityScript",
+    "ContactApp",
+    "TzaarNet",
+    "ProtonDriveSync",
+    "NhBlog",
+    "GraphData",
+    "Project34004",
+    "SpaceGame3d",
+    "ValOutcast",
+    "FairyTaleAdventure",
     "DeorLanguage",
     "DeorPico",
     "NewWebProject",
     "SolarBit",
     "FoodComparison",
     "CodingAstronomerRefresh",
-    "ReactNativeTesting",
-    "TinyMightyCharSheet",
     "WeatherSite",
     "RpgFromScratch",
     "BggScraper",

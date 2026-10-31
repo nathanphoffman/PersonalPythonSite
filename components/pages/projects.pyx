@@ -3,14 +3,22 @@ from reactpy_jsx import jsx
 from typing import Any
 
 from components.projects import (
+    CodeQualityScript,
+    ContactApp,
+    TzaarNet,
+    ProtonDriveSync,
+    NhBlog,
+    GraphData,
+    Project34004,
+    SpaceGame3d,
+    ValOutcast,
+    FairyTaleAdventure,
     DeorLanguage,
     DeorPico,
     NewWebProject,
     SolarBit,
     FoodComparison,
     CodingAstronomerRefresh,
-    ReactNativeTesting,
-    TinyMightyCharSheet,
     WeatherSite,
     RpgFromScratch,
     BggScraper,
@@ -63,13 +71,21 @@ def Projects() -> Any:
             <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
                 <DeorLanguage />
+                <SpaceGame3d />
+                <ContactApp />
+                <GraphData />
+                <FairyTaleAdventure />
                 <DeorPico />
-                <NewWebProject />
-                <SolarBit />
                 <FoodComparison />
+                <CodeQualityScript />
+                <NewWebProject />
+                <ValOutcast />
+                <SolarBit />
                 <CodingAstronomerRefresh />
-                <ReactNativeTesting />
-                <TinyMightyCharSheet />
+                <TzaarNet />
+                <NhBlog />
+                <Project34004 />
+                <ProtonDriveSync />
             </ProjectGrid>
 
             <ProjectTitle>2025</ProjectTitle>

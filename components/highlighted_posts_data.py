@@ -15,24 +15,10 @@ class HighlightedPost:
 
 HIGHLIGHTED_POSTS = [
     HighlightedPost(
-        title='Entropy with AI (and Humans) in Code Systems',
-        link="https://medium.com/@nathanphoffman/entropy-with-ai-and-humans-in-code-systems-1ebdcff9642f",
-        date='April 25, 2026',
-        snippet='Something occurred to me several days ago while I was having a surprisingly difficult time generating a basic table for amateur astronomy targets using Claude. After multiple prompts it seemed to get worse: I had a realization that code projects could be represented as a state of entropy (rather than compounding error) just as we measure the universe. The idea being: could AI (and humans for that matter) simply trend towards a more chaotic state without some kind of brake? Or perhaps is it just…',
-        image='blog-1ebdcff9642f.png',
-    ),
-    HighlightedPost(
         title='The Time Estimate System I Love',
         link="https://medium.com/@nathanphoffman/the-time-estimate-system-i-love-b40c0a1d3d79",
         date='October 13, 2022',
         snippet='Back when I was working at a REIT company, I was developing a system for Revenue Management to price storage units. While the system was being developed, the revenue team was excited to start using it as it was being actively developed (effectively an alpha). The problem was, they had many wish-list items they wanted implemented quickly so that they could perform their job functions more efficiently. These requests were filed into Asana and were submitted in large numbers extremely rapidly.…',
-    ),
-    HighlightedPost(
-        title='AI is likely to make code knowledge more useful',
-        link="https://medium.com/@nathanphoffman/ai-is-likely-to-make-code-more-useful-efb13924e752",
-        date='May 05, 2026',
-        snippet='An interesting argument I have heard is that AI will remove our ability to think critically about programming, and discourage newer programmers from learning how to code. Interestingly, I think it is a bit of the opposite. I have recently been trying to compose computed tables using AI for astronomy targets and another for ethical food choices (based on ecosystems, intelligent animals, pesticide use, etc). What shocked me is how horrific it was at composing these tables using calculations…',
-        image='blog-efb13924e752.png',
     ),
     HighlightedPost(
         title='What makes AI different from us?',
@@ -47,5 +33,19 @@ HIGHLIGHTED_POSTS = [
         date='July 11, 2026',
         snippet='I have always been intrigued by people like Richard Stallman who make entire websites using nothing but html (no JS). In his case, it is freedom respecting, and while I respect Stallman tremendously I feel like my own frustration with the web is less the language being freedom respecting, even less the language being hard to write — I after-all love web programming. No, it is far more implementations on the web being frustrating to use, way overthought, and far too over-engineered — or as the…',
         image='blog-6b130d4e0e5f.png',
+    ),
+    HighlightedPost(
+        title='Entropy with AI (and Humans) in Code Systems',
+        link="https://medium.com/@nathanphoffman/entropy-with-ai-and-humans-in-code-systems-1ebdcff9642f",
+        date='April 25, 2026',
+        snippet='Something occurred to me several days ago while I was having a surprisingly difficult time generating a basic table for amateur astronomy targets using Claude. After multiple prompts it seemed to get worse: I had a realization that code projects could be represented as a state of entropy (rather than compounding error) just as we measure the universe. The idea being: could AI (and humans for that matter) simply trend towards a more chaotic state without some kind of brake? Or perhaps is it just…',
+        image='blog-1ebdcff9642f.png',
+    ),
+    HighlightedPost(
+        title='AI is likely to make code knowledge more useful',
+        link="https://medium.com/@nathanphoffman/ai-is-likely-to-make-code-more-useful-efb13924e752",
+        date='May 05, 2026',
+        snippet='An interesting argument I have heard is that AI will remove our ability to think critically about programming, and discourage newer programmers from learning how to code. Interestingly, I think it is a bit of the opposite. I have recently been trying to compose computed tables using AI for astronomy targets and another for ethical food choices (based on ecosystems, intelligent animals, pesticide use, etc). What shocked me is how horrific it was at composing these tables using calculations…',
+        image='blog-efb13924e752.png',
     ),
 ]
