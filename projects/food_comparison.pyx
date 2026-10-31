@@ -1,0 +1,23 @@
+from reactpy import component
+from reactpy_jsx import jsx
+from typing import Any
+
+from components.project import Project, Title, Tech  # type: ignore[import-not-found]
+
+
+@component
+def FoodComparison() -> Any:
+    return (
+        <Project image="food-comparison.png" link="https://food.nathanhoffman.me" github="https://github.com/nathanphoffman/FoodComparisonMicroServices">
+            <Title>Food Comparison</Title>
+            <Tech>Next.js</Tech>
+            <Tech>TypeScript</Tech>
+            <Tech>Tailwind</Tech>
+            <Tech>Rust</Tech>
+            <Tech>WASM</Tech>
+            <Tech>C# .NET</Tech>
+            <Tech>SQLite</Tech>
+            <Tech>Docker</Tech>
+            I created this tool as a way to experiment with Claude agents to source food data and help make decisions about how to plan a diet based on various factors from nutrition to environmental impact.
+        </Project>
+    )

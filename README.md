@@ -27,7 +27,7 @@ Starts three concurrent watchers:
 |---------|-------------|
 | `css`   | Tailwind CSS in watch mode |
 | `server` | Uvicorn with hot reload on `.pyx` file changes |
-| `mypy`  | Type-checking watcher on the `components/` directory |
+| `mypy`  | Type-checking watcher on the `components/`, `pages/` and `projects/` directories |
 
 The app runs at [http://localhost:8000](http://localhost:8000).
 
@@ -42,8 +42,9 @@ npm run deploy       # build Tailwind CSS minified (used in production)
 ## Project structure
 
 ```
-components/       # ReactPy components (.pyx files)
-  pages/          # page-level components
+components/       # shared ReactPy components, app shell and helpers
+pages/            # one root component per route
+projects/         # one component per project card
 scripts/          # dev tooling (mypy wrapper)
 static/           # CSS and static assets
 main.py           # Starlette app entry point

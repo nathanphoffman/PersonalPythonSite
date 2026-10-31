@@ -3,12 +3,12 @@ from reactpy_jsx import jsx
 from reactpy.backend.hooks import use_location
 from typing import Any
 
-from components.general.navbar import Navbar
-from components.general.header import Header
-from components.general.footer import Footer
-from components.pages.home import Home
-from components.pages.about import About
-from components.pages.projects import Projects
+from components.navbar import Navbar
+from components.header import Header
+from components.footer import Footer
+from pages.home import Home
+from pages.about import About
+from pages.projects import Projects
 
 @component
 def App() -> Any:

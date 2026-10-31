@@ -8,8 +8,8 @@ CSS in static/input.css hides the shell.
 
 from typing import Any
 
-from components.general.header import Header
-from components.general.navbar import Navbar
+from components.header import Header
+from components.navbar import Navbar
 from reactpy import component, html
 from reactpy.core.layout import Layout
 from reactpy.utils import vdom_to_html

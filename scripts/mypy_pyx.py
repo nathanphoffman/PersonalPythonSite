@@ -34,7 +34,7 @@ def run_mypy(target_dir: pathlib.Path) -> int:
 
 
 def main() -> int:
-    pyx_files = list(PROJECT_ROOT.glob("components/*.pyx"))
+    pyx_files = [file for folder in ("components", "pages", "projects") for file in PROJECT_ROOT.glob(f"{folder}/*.pyx")]
 
     if not pyx_files:
         print("No .pyx files found.")
