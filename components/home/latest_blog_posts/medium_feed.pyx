@@ -2,8 +2,8 @@ from reactpy import component, use_effect, use_state
 from reactpy_jsx import jsx
 from typing import Any
 
-from components.home.medium import get_posts
-from components.home.post import Post
+from components.home.latest_blog_posts.medium import get_posts
+from components.home.latest_blog_posts.post import Post
 
 
 @component

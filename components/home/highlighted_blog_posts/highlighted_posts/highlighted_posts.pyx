@@ -3,8 +3,8 @@ from reactpy_jsx import jsx
 from typing import Any
 
 from components.card import Card
-from components.home.carousel import Carousel
-from components.home.highlighted_posts_data import HIGHLIGHTED_POSTS
+from components.home.carousel.carousel import Carousel
+from components.home.highlighted_blog_posts.highlighted_posts import HIGHLIGHTED_POSTS
 
 
 @component

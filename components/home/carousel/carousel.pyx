@@ -2,7 +2,7 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
-from components.router import CarouselFade, ScrollButton
+from components.home.carousel.carousel_scripts import CarouselFade, ScrollButton
 from components.utils import flatten_children
 
 ARROW_CLASS = "absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 border border-gray-200 shadow-md text-gray-600 text-xl hover:bg-white hover:text-gray-900 hover:shadow-lg transition-all animate-fade-in motion-reduce:animate-none"

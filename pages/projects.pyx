@@ -2,168 +2,39 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
-from components.projects import (
-    CodeQualityScript,
-    ContactApp,
-    TzaarNet,
-    ProtonDriveSync,
-    NhBlog,
-    GraphData,
-    Project34004,
-    SpaceGame3d,
-    ValOutcast,
-    FairyTaleAdventure,
-    DeorLanguage,
-    DeorPico,
-    NewWebProject,
-    SolarBit,
-    FoodComparison,
-    CodingAstronomerRefresh,
-    WeatherSite,
-    RpgFromScratch,
-    BggScraper,
-    TinyMightyRpg,
-    BerksHomes,
-    LuckyVitamin2021,
-    LuckyVitamin2020,
-    VueCalendar,
-    VexmenRobotics,
-    JetSenseFacebook,
-    IrrationalCalculator,
-    FormsSystem,
-    DeveloperAdminSite,
-    CodingAstronomerOriginal,
-    CentralizedWebService,
-    OperationsChecklist,
-    DmUpdate,
-    LostWizard,
-    PeriodicTable,
-    RevenueManagementPricing,
-    AccountingCheck,
-    BpmSolution,
-    ApolloGame,
-    NightEmber,
-    Webiota,
-    PhotoGallery,
-    RealEstateSite,
-    MusicSite,
-    BlueSkyEnvySite,
-    GraphingTool,
-)
-from components.projects.project_grid import ProjectGrid
-from components.projects.project_title import ProjectTitle
+from components.projects.project_header import ProjectHeader
+from components.projects.years.year_2026 import Year2026
+from components.projects.years.year_2025 import Year2025
+from components.projects.years.year_2024 import Year2024
+from components.projects.years.year_2023 import Year2023
+from components.projects.years.year_2021_2022 import Year20212022
+from components.projects.years.year_2020 import Year2020
+from components.projects.years.year_2019 import Year2019
+from components.projects.years.year_2018 import Year2018
+from components.projects.years.year_2017 import Year2017
+from components.projects.years.year_2016 import Year2016
+from components.projects.years.year_2015 import Year2015
+from components.projects.years.year_2007_2014 import Year20072014
+from components.projects.years.year_pre_2006 import YearPre2006
+
 
 @component
 def Projects() -> Any:
     return (
         <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">My Projects</h1>
-            <p className="text-gray-700 leading-relaxed mb-8">
-                Below you can find a list of my projects. If you are interested in finding out more about my
-                professional career, please add me on
-
-                <a target="_blank" rel="noopener noreferrer" className="mx-1 text-blue-600 hover:text-blue-800" href="https://www.linkedin.com/in/nathan-hoffman-a75994111/">LinkedIn.</a>
-
-                If you want to see other more minor personal projects I have worked on, you can visit
-                <a target="_blank" rel="noopener noreferrer" className="mx-1 text-blue-600 hover:text-blue-800" href="https://github.com/nathanphoffman">my Personal GitHub.</a>
-            </p>
-
-            <ProjectTitle>2026</ProjectTitle>
-            <ProjectGrid>
-                <DeorLanguage />
-                <SpaceGame3d />
-                <ContactApp />
-                <GraphData />
-                <FairyTaleAdventure />
-                <DeorPico />
-                <FoodComparison />
-                <CodeQualityScript />
-                <NewWebProject />
-                <ValOutcast />
-                <SolarBit />
-                <CodingAstronomerRefresh />
-                <TzaarNet />
-                <NhBlog />
-                <Project34004 />
-                <ProtonDriveSync />
-            </ProjectGrid>
-
-            <ProjectTitle>2025</ProjectTitle>
-            <ProjectGrid>
-                <WeatherSite />
-                <RpgFromScratch />
-            </ProjectGrid>
-
-            <ProjectTitle>2024</ProjectTitle>
-            <ProjectGrid>
-                <BggScraper />
-                <TinyMightyRpg />
-            </ProjectGrid>
-
-            <ProjectTitle>2023</ProjectTitle>
-            <ProjectGrid>
-                <BerksHomes />
-            </ProjectGrid>
-
-            <ProjectTitle>2021-2022</ProjectTitle>
-            <ProjectGrid>
-                <LuckyVitamin2021 />
-            </ProjectGrid>
-
-            <ProjectTitle>2020</ProjectTitle>
-            <ProjectGrid>
-                <LuckyVitamin2020 />
-                <VueCalendar />
-            </ProjectGrid>
-
-            <ProjectTitle>2019</ProjectTitle>
-            <ProjectGrid>
-                <VexmenRobotics />
-                <JetSenseFacebook />
-                <IrrationalCalculator />
-            </ProjectGrid>
-
-            <ProjectTitle>2018</ProjectTitle>
-            <ProjectGrid>
-                <FormsSystem />
-                <DeveloperAdminSite />
-            </ProjectGrid>
-
-            <ProjectTitle>2017</ProjectTitle>
-            <ProjectGrid>
-                <CodingAstronomerOriginal />
-                <CentralizedWebService />
-                <OperationsChecklist />
-            </ProjectGrid>
-
-            <ProjectTitle>2016</ProjectTitle>
-            <ProjectGrid>
-                <DmUpdate />
-                <LostWizard />
-                <PeriodicTable />
-                <RevenueManagementPricing />
-            </ProjectGrid>
-
-            <ProjectTitle>2015</ProjectTitle>
-            <ProjectGrid>
-                <AccountingCheck />
-                <BpmSolution />
-                <ApolloGame />
-            </ProjectGrid>
-
-            <ProjectTitle>2007-2014</ProjectTitle>
-            <ProjectGrid>
-                <NightEmber />
-                <Webiota />
-                <PhotoGallery />
-            </ProjectGrid>
-
-            <ProjectTitle>pre-2006 (High School)</ProjectTitle>
-            <ProjectGrid>
-                <RealEstateSite />
-                <MusicSite />
-                <BlueSkyEnvySite />
-                <GraphingTool />
-            </ProjectGrid>
+            <ProjectHeader />
+            <Year2026 />
+            <Year2025 />
+            <Year2024 />
+            <Year2023 />
+            <Year20212022 />
+            <Year2020 />
+            <Year2019 />
+            <Year2018 />
+            <Year2017 />
+            <Year2016 />
+            <Year2015 />
+            <Year20072014 />
+            <YearPre2006 />
         </div>
     )

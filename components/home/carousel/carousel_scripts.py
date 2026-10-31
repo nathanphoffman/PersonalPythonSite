@@ -101,5 +101,5 @@ function makeJsonSafeEventHandler(oldHandler) {
 }
 """
 
-_module = module_from_string("spa-router", _JS)
+_module = module_from_string("carousel-scripts", _JS)
 ScrollButton, CarouselFade = export(_module, ["ScrollButton", "CarouselFade"])

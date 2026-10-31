@@ -48,6 +48,7 @@ components/       # shared ReactPy components and helpers
   layout/         # header, navbar and footer shown on every page
   projects/       # project card pieces (project, project_grid, project_title)
     entries/      # one component per project card
+    years/        # one component per year section on /projects
 pages/            # one root component per route
 scripts/          # dev tooling (mypy wrapper)
 static/           # CSS and static assets

@@ -3,7 +3,7 @@ import time
 import httpx
 import pytest
 
-from components.home import medium
+from components.home.latest_blog_posts import medium
 
 FEED_XML = """<?xml version="1.0"?>
 <rss version="2.0"><channel>
