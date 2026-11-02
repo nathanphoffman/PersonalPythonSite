@@ -12,6 +12,6 @@ def FairyTaleAdventure() -> Any:
             <Title>The Faery Tale Adventure</Title>
             <Tech>Rust</Tech>
             <Tech>SDL2</Tech>
-            A native Linux port of the 1987 Amiga game The Faery Tale Adventure, rewritten in safe Rust from the original source. The intro, map, fighting, shops, magic, music and save/load all work.
+            This is a Linux port of the 1987 Amiga game: "The Faery Tale Adventure," a game from my childhood that I converted with the help of Claude to Rust. I have future plans to also add to the game once the conversion is totally complete.  
         </Project>
     )

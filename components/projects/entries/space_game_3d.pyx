@@ -11,7 +11,8 @@ def SpaceGame3d() -> Any:
         <Project github="https://github.com/nathanphoffman/3dSpaceGame">
             <Title>3D Space Game</Title>
             <Tech>Rust</Tech>
+            <Tech>Deor</Tech>
             <Tech>macroquad</Tech>
-            A 3D space combat game in the style of Descent and X-Wing. Fly around a scale-model solar system, mine asteroids, dock at stations and fight, with an online shared-universe mode being built.
+            A space combat game I created in the style of Descent and X-Wing. I built the initial form with rust pair-coding with Claude and then converted the entire project to Deor using a ralph loop and fully agentic AI.
         </Project>
     )

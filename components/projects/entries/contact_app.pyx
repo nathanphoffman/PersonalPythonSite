@@ -14,6 +14,6 @@ def ContactApp() -> Any:
             <Tech>Next.js</Tech>
             <Tech>Expo</Tech>
             <Tech>Docker</Tech>
-            Digital business cards for web and mobile, with friends and events. It is friends-only with no public content, built as a set of small services behind one gateway.
+            A site that uses a digital business card format to allow friends to add each other as contacts and schedule events with each other. 
         </Project>
     )
