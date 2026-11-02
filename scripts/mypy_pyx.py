@@ -22,8 +22,11 @@ def transpile_pyx_files(pyx_files: list[pathlib.Path], output_dir: pathlib.Path)
 def run_mypy(target_dir: pathlib.Path) -> int:
     result = subprocess.run(
         [
-            sys.executable, "-m", "mypy",
-            "--config-file", str(PROJECT_ROOT / "pyproject.toml"),
+            sys.executable,
+            "-m",
+            "mypy",
+            "--config-file",
+            str(PROJECT_ROOT / "pyproject.toml"),
             str(target_dir),
         ],
         # Lets mypy resolve imports like `reactpy_jsx` that live at the project root

@@ -2,6 +2,7 @@
 
 image is a file name in static/img. Leave fields empty to show a card without them.
 """
+
 from dataclasses import dataclass
 
 

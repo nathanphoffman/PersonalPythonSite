@@ -111,4 +111,3 @@ async def get_posts() -> list[MediumPost]:
         logger.warning("Medium feed fetch failed, serving cached posts: %s", error)
 
     return _cache
-
