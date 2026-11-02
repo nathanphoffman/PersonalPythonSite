@@ -1,4 +1,4 @@
-def children_text(children) -> str:
+def children_text(children: list[object] | None) -> str:
     """Extract and normalize whitespace from JSX text children (passed as a list of strings)."""
 
     if not children:
@@ -8,10 +8,10 @@ def children_text(children) -> str:
     return " ".join(child.strip() for child in children if isinstance(child, str) and child.strip())
 
 
-def flatten_children(children) -> list:
+def flatten_children(children: list[object] | None) -> list[object]:
     """Flatten one level of nested lists, since JSX can hand a component its list children wrapped in another list."""
 
-    flat: list = []
+    flat: list[object] = []
 
     for child in children or []:
         flat.extend(child if isinstance(child, list) else [child])
