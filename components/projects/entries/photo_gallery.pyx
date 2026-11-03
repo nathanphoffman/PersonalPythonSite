@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def PhotoGallery() -> Any:
     return (
-        <Project image="gallery.png" link="/examples/photogallery/index.html">
+        <Project image="photo_gallery.png" link="/photogallery">
             <Title>Photo Gallery</Title>
             <Tech>JQuery</Tech>
             <Tech>PHP</Tech>

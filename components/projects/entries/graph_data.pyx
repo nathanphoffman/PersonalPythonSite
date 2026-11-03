@@ -13,6 +13,6 @@ def GraphData() -> Any:
             <Tech>React</Tech>
             <Tech>TypeScript</Tech>
             <Tech>Vite</Tech>
-            A small site of interactive charts built from my own data sets, covering things like programming language trends, science, tabletop games and calculators. Adding a chart is just a data file and one component.
+            A small site of interactive charts, tables, and tools built from my own data sets, covering things like programming language trends, science, tabletop games and calculators. I also use it to track my various project line counts, and prioritizations.
         </Project>
     )

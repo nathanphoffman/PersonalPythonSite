@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def LostWizard() -> Any:
     return (
-        <Project image="lostwizard.png" link="/examples/lostwizard/index.html">
+        <Project image="lostwizard.png" link="/lostwizard">
             <Title>Lost Wizard</Title>
             <Tech>JavaScript</Tech>
             <Tech>PhaserJS</Tech>

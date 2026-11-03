@@ -6,6 +6,7 @@ from typing import Any
 from components.layout.navbar import Navbar
 from components.layout.header import Header
 from components.layout.footer import Footer
+from components.games.game_modal import GameModals
 from pages.home import Home
 from pages.about import About
 from pages.projects import Projects
@@ -23,8 +24,12 @@ def App() -> Any:
     else:
         content = <Home />
 
+    # Modals sit outside the fading content below: its animation would trap them under the navbar
+    modals = <GameModals /> if path == "/projects" else None
+
     return (
         <div className="min-h-screen bg-white">
+            {modals}
             <Navbar />
             <Header />
             <div className="animate-fade-in motion-reduce:animate-none">

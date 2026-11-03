@@ -5,6 +5,7 @@ from typing import Any
 from components.projects import (
     DeorLanguage,
     SpaceGame3d,
+    SpaceBoardGame,
     ContactApp,
     GraphData,
     FairyTaleAdventure,
@@ -31,21 +32,22 @@ def Year2026() -> Any:
             <ProjectTitle>2026</ProjectTitle>
             <ProjectGrid>
                 <DeorLanguage />
+                <DeorPico />
                 <SpaceGame3d />
-                <ContactApp />
                 <GraphData />
                 <FairyTaleAdventure />
-                <DeorPico />
                 <FoodComparison />
                 <CodeQualityScript />
+                <TzaarNet />
                 <NewWebProject />
                 <ValOutcast />
                 <SolarBit />
                 <CodingAstronomerRefresh />
-                <TzaarNet />
+                <ContactApp />
                 <NhBlog />
                 <Project34004 />
                 <ProtonDriveSync />
+                <SpaceBoardGame />
             </ProjectGrid>
         </div>
     )

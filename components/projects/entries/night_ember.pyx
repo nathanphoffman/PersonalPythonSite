@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def NightEmber() -> Any:
     return (
-        <Project image="nightember.png" link="/examples/nightember/index.html">
+        <Project image="nightember.png" link="/nightember">
             <Title>Night Ember</Title>
             <Tech>JQuery</Tech>
             <Tech>My Own CSS/Design</Tech>

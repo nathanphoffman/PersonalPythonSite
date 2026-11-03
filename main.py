@@ -2,13 +2,15 @@ import pyjsx_setup  # registers .px / .pyx import hook — must be first
 
 pyjsx_setup.setup()
 
+from pathlib import Path
+
 from app import App  # type: ignore[import-not-found]
 from reactpy import html
 from reactpy.backend._common import read_client_index_html
 from reactpy.backend.starlette import Options, configure
 from starlette.applications import Starlette
 from starlette.requests import Request
-from starlette.responses import HTMLResponse
+from starlette.responses import HTMLResponse, RedirectResponse
 from starlette.staticfiles import StaticFiles
 
 from shell import render_shell_html
@@ -17,11 +19,30 @@ from shell import render_shell_html
 app = Starlette()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Standalone games built by scripts/build_static_sites.sh. Only mounted once built, so a fresh clone still starts.
+STATIC_SITES = ("lostwizard", "rpgfromscratch", "nightember", "photogallery", "periodictable")
+
+
+
+def redirect_to_folder(site_name: str):
+    # The mount only matches "/name/", and the catch-all page route below would swallow plain "/name"
+    async def redirect(request: Request) -> RedirectResponse:
+        return RedirectResponse(f"/{site_name}/")
+
+    return redirect
+
+
+for site_name in STATIC_SITES:
+    if Path("sites", site_name).is_dir():
+        app.add_route(f"/{site_name}", redirect_to_folder(site_name))
+        app.mount(f"/{site_name}", StaticFiles(directory=f"sites/{site_name}", html=True), name=site_name)
+
 options = Options(
     head=(
         html.title("The Coding Astronomer"),
         html.meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
         html.link({"rel": "stylesheet", "href": "/static/output.css"}),
+        html.script({"src": "/static/open_modal_from_hash.js", "defer": True}),
     ),
     # We serve the index ourselves below, so ReactPy must not register its own
     serve_index_route=False,

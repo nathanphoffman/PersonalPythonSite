@@ -43,11 +43,12 @@ from components.projects.entries.tiny_mighty_rpg import TinyMightyRpg
 from components.projects.entries.tzaar_net import TzaarNet
 from components.projects.entries.val_outcast import ValOutcast
 from components.projects.entries.vexmen_robotics import VexmenRobotics
-from components.projects.entries.vue_calendar import VueCalendar
 from components.projects.entries.weather_site import WeatherSite
+from components.projects.entries.space_board_game import SpaceBoardGame
 from components.projects.entries.webiota import Webiota
 
 __all__ = [
+    "SpaceBoardGame",
     "CodeQualityScript",
     "ContactApp",
     "TzaarNet",
@@ -71,7 +72,6 @@ __all__ = [
     "BerksHomes",
     "LuckyVitamin2021",
     "LuckyVitamin2020",
-    "VueCalendar",
     "VexmenRobotics",
     "JetSenseFacebook",
     "IrrationalCalculator",

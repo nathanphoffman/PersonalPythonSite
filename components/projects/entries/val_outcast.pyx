@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def ValOutcast() -> Any:
     return (
-        <Project github="https://github.com/nathanphoffman/ValOutcast">
+        <Project image="valoutcast_still.png" github="https://github.com/nathanphoffman/ValOutcast" install_slug="valoutcast">
             <Title>ValOutcast</Title>
             <Tech>C#</Tech>
             <Tech>C++</Tech>

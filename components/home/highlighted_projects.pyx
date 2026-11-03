@@ -18,10 +18,10 @@ def HighlightedProjects() -> Any:
                 <DeorLanguage />
                 <SpaceGame3d />
                 <DeorPico />
-                <NewWebProject />
+                <TinyMightyRpg />
                 <WeatherSite />
                 <FoodComparison />
-                <TinyMightyRpg />
+                <NewWebProject />
             </Carousel>
         </div>
     )

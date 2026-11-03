@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def FairyTaleAdventure() -> Any:
     return (
-        <Project github="https://github.com/nathanphoffman/FairyTaleAnAdventure">
+        <Project image="faery_tale_adventure.png" github="https://github.com/nathanphoffman/FairyTaleAnAdventure" install_slug="faerytale">
             <Title>The Faery Tale Adventure</Title>
             <Tech>Rust</Tech>
             <Tech>SDL2</Tech>

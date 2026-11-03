@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+
+	<script src="src/jquery.min.js"></script>
+	<script src="src/jquery.mixitup.min.js"></script>
+	
+	<style>
+	#Grid .mix{
+    opacity: 0;
+    display: none;
+}
+	</style>
+	
+	<script>
+	$(function(){
+     
+    $('#Grid').mixitup();
+     
+});
+	
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="src/template.css"/>
+</HEAD>
+<body>
+		<div class="topgrad" align="center"><h1><strong>Best of Gallery</strong> by Nathan P. Hoffman</h1></div>
+		
+		<center>
+		<a href="#" class="filter" data-filter="astronomy">Astronomy</a>
+		<a href="#" class="filter" data-filter="plant">Flowers & Trees</a>
+		<a href="#" class="filter" data-filter="manmade">Manmade</a>
+		<a href="#" class="filter" data-filter="fav">Favorites</a>
+		<a href="#" class="filter" data-filter="water">Water Features</a>
+		<a href="#" class="filter" data-filter="wildlife">Insects & Animals</a>
+		<br>
+		<a href="#" class="filter" data-filter="all">Show All</a>
+		<a href="#" class="filter" data-filter="2012">2012</a>
+		<a href="#" class="filter" data-filter="2013">2013</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#" class="filter" data-filter="spring">Spring</a>
+		<a href="#" class="filter" data-filter="summer">Summer</a>
+		<a href="#" class="filter" data-filter="fall">Fall</a>
+		<a href="#" class="filter" data-filter="winter">Winter</a>
+		</center>
+		
+		
+		<div class="wrapper">
+					
+
+			
+			<!-- SORT CONTROLS 
+				
+			<div class="controls">
+				<h3>Sort Controls</h3>
+				<ul>
+					<li class="sort" data-sort="data-cat" data-order="desc">Descending</li>
+					<li class="sort" data-sort="data-cat" data-order="asc">Ascending</li>
+					<li class="sort active" data-sort="default" data-order="desc">Default</li>
+				</ul>
+			</div>
+			-->
+			<hr/>
+			
+			<!-- GRID -->
+			
+			<ul id="Grid">
+			
+				<!-- SUMMER 2012 -->
+				<li class="mix wildlife plant summer 2012 fav" data-cat="1"><a href="2012/summer/1.jpg"><img src="2012/summer/icon/1.jpg"></a></li>
+				<li class="mix water summer 2012" data-cat="1"><a href="2012/summer/2.jpg"><img src="2012/summer/icon/2.jpg"></a></li>
+				<li class="mix manmade summer 2012" data-cat="1"><a href="2012/summer/3.jpg"><img src="2012/summer/icon/3.jpg"></a></li>
+				<li class="mix plant summer 2012" data-cat="1"><a href="2012/summer/4.jpg"><img src="2012/summer/icon/4.jpg"></a></li>
+				<li class="mix plant summer 2012 fav" data-cat="1"><a href="2012/summer/5.jpg"><img src="2012/summer/icon/5.jpg"></a></li>
+				<li class="mix plant wildlife summer 2012" data-cat="1"><a href="2012/summer/6.jpg"><img src="2012/summer/icon/6.jpg"></a></li>
+				<li class="mix wildlife summer 2012" data-cat="1"><a href="2012/summer/7.jpg"><img src="2012/summer/icon/7.jpg"></a></li>
+				<li class="mix manmade summer 2012" data-cat="1"><a href="2012/summer/8.jpg"><img src="2012/summer/icon/8.jpg"></a></li>
+				<li class="mix astronomy summer 2012" data-cat="1"><a href="2012/summer/9.jpg"><img src="2012/summer/icon/9.jpg"></a></li>
+				<li class="mix plant summer 2012" data-cat="1"><a href="2012/summer/10.jpg"><img src="2012/summer/icon/10.jpg"></a></li>
+				<li class="mix plant summer 2012" data-cat="1"><a href="2012/summer/11.jpg"><img src="2012/summer/icon/11.jpg"></a></li>
+				<li class="mix manmade water summer 2012" data-cat="1"><a href="2012/summer/12.jpg"><img src="2012/summer/icon/12.jpg"></a></li>
+				
+				<!-- FALL 2012 -->
+				<li class="mix water fall 2012" data-cat="1"><a href="2012/fall/1.jpg"><img src="2012/fall/icon/1.jpg"></a></li>
+				<li class="mix water fall 2012" data-cat="1"><a href="2012/fall/2.jpg"><img src="2012/fall/icon/2.jpg"></a></li>
+				<li class="mix plant fall 2012 fav" data-cat="1"><a href="2012/fall/3.jpg"><img src="2012/fall/icon/3.jpg"></a></li>
+				<li class="mix plant water fall 2012" data-cat="1"><a href="2012/fall/4.jpg"><img src="2012/fall/icon/4.jpg"></a></li>
+				<li class="mix water fall 2012 fav" data-cat="1"><a href="2012/fall/5.jpg"><img src="2012/fall/icon/5.jpg"></a></li>
+				<li class="mix water fall 2012" data-cat="1"><a href="2012/fall/6.jpg"><img src="2012/fall/icon/6.jpg"></a></li>
+				<li class="mix wildlife fall 2012" data-cat="1"><a href="2012/fall/7.jpg"><img src="2012/fall/icon/7.jpg"></a></li>
+				<li class="mix water fall 2012 fav" data-cat="1"><a href="2012/fall/8.jpg"><img src="2012/fall/icon/8.jpg"></a></li>
+				<li class="mix water fall 2012 fav" data-cat="1"><a href="2012/fall/9.jpg"><img src="2012/fall/icon/9.jpg"></a></li>
+				<li class="mix astronomy fall 2012" data-cat="1"><a href="2012/fall/10.jpg"><img src="2012/fall/icon/10.jpg"></a></li>
+				<li class="mix astronomy fall 2012 fav" data-cat="1"><a href="2012/fall/11.jpg"><img src="2012/fall/icon/11.jpg"></a></li>
+				<li class="mix water fall 2012" data-cat="1"><a href="2012/fall/12.jpg"><img src="2012/fall/icon/12.jpg"></a></li>
+				
+				<!-- WINTER 2012 -->
+				<li class="mix astronomy winter 2012" data-cat="1"><a href="2012/winter/1.jpg"><img src="2012/winter/icon/1.jpg"></a></li>
+				<li class="mix water winter 2012" data-cat="1"><a href="2012/winter/2.jpg"><img src="2012/winter/icon/2.jpg"></a></li>
+				<li class="mix wildlife water winter 2012 fav" data-cat="1"><a href="2012/winter/3.jpg"><img src="2012/winter/icon/3.jpg"></a></li>
+				<li class="mix wildlife winter 2012 fav" data-cat="1"><a href="2012/winter/4.jpg"><img src="2012/winter/icon/4.jpg"></a></li>
+				<li class="mix water winter 2012 fav" data-cat="1"><a href="2012/winter/5.jpg"><img src="2012/winter/icon/5.jpg"></a></li>
+				<li class="mix plant winter 2012 fav" data-cat="1"><a href="2012/winter/6.jpg"><img src="2012/winter/icon/6.jpg"></a></li>
+				<li class="mix manmade winter 2012" data-cat="1"><a href="2012/winter/7.jpg"><img src="2012/winter/icon/7.jpg"></a></li>
+				<li class="mix water winter 2012" data-cat="1"><a href="2012/winter/8.jpg"><img src="2012/winter/icon/8.jpg"></a></li>
+				<li class="mix water winter 2012" data-cat="1"><a href="2012/winter/9.jpg"><img src="2012/winter/icon/9.jpg"></a></li>
+				<li class="mix plant winter 2012" data-cat="1"><a href="2012/winter/10.jpg"><img src="2012/winter/icon/10.jpg"></a></li>
+				<li class="mix plant winter 2012" data-cat="1"><a href="2012/winter/11.jpg"><img src="2012/winter/icon/11.jpg"></a></li>
+				<li class="mix manmade plant winter 2012" data-cat="1"><a href="2012/winter/12.jpg"><img src="2012/winter/icon/12.jpg"></a></li>
+
+				<!-- SPRING 2013 -->
+				<li class="mix wildlife spring 2013" data-cat="1"><a href="2013/spring/1.jpg"><img src="2013/spring/icon/1.jpg"></a></li>
+				<li class="mix water spring 2013" data-cat="1"><a href="2013/spring/2.jpg"><img src="2013/spring/icon/2.jpg"></a></li>
+				<li class="mix wildlife water spring 2013 fav" data-cat="1"><a href="2013/spring/3.jpg"><img src="2013/spring/icon/3.jpg"></a></li>
+				<li class="mix wildlife spring 2013" data-cat="1"><a href="2013/spring/4.jpg"><img src="2013/spring/icon/4.jpg"></a></li>
+				<li class="mix plant spring 2013" data-cat="1"><a href="2013/spring/5.jpg"><img src="2013/spring/icon/5.jpg"></a></li>
+				<li class="mix plant spring 2013" data-cat="1"><a href="2013/spring/6.jpg"><img src="2013/spring/icon/6.jpg"></a></li>
+				<li class="mix plant spring 2013" data-cat="1"><a href="2013/spring/7.jpg"><img src="2013/spring/icon/7.jpg"></a></li>
+				<li class="mix astronomy plant water spring 2013" data-cat="1"><a href="2013/spring/8.jpg"><img src="2013/spring/icon/8.jpg"></a></li>
+				<li class="mix plant spring 2013" data-cat="1"><a href="2013/spring/9.jpg"><img src="2013/spring/icon/9.jpg"></a></li>
+				<li class="mix water spring wildlife 2013" data-cat="1"><a href="2013/spring/10.jpg"><img src="2013/spring/icon/10.jpg"></a></li>
+				<li class="mix plant spring 2013" data-cat="1"><a href="2013/spring/11.jpg"><img src="2013/spring/icon/11.jpg"></a></li>
+				<li class="mix water spring wildlife 2013" data-cat="1"><a href="2013/spring/12.jpg"><img src="2013/spring/icon/12.jpg"></a></li>
+				
+				
+				<li class="gap"></li> <!-- "gap" elements fill in the gaps in justified grid -->
+			</ul>
+			
+		</div>
+		
+		<script>/* CloudFlare analytics upgrade */
+</script>
+
+<br><br>
+		
+		
+<p height="500"></p>		
+		
+	</body>
+</HTML>

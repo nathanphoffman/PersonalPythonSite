@@ -9,7 +9,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 def CentralizedWebService() -> Any:
     return (
         <Project link="">
-            <Title>A Centralized Web Service</Title>
+            <Title>A Centralized Web Service (Cerberus)</Title>
             <Tech>(Professional) C# Web Api</Tech>
             <Tech>OAuth</Tech>
             <Tech>Owin</Tech>
@@ -17,6 +17,6 @@ def CentralizedWebService() -> Any:
             <Tech>ExpressJS</Tech>
             <Tech>MongoDB</Tech>
             A web service designed to integrate several of our existing systems
-            and redirect them to multiple point-of-sales during a point-of-sale transition.
+            and redirect them to multiple point-of-sales during a point-of-sale transition. This was extremely helpful as it allowed us to incorporate tests as a middleman to make sure the vendor was providing the endpoints as advertised.
         </Project>
     )

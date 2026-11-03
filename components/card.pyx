@@ -2,6 +2,7 @@ from reactpy import component
 from reactpy_jsx import jsx
 from typing import Any
 
+from components.links import ExternalLink, InternalLink
 from components.utils import flatten_children
 
 
@@ -9,17 +10,14 @@ from components.utils import flatten_children
 def Card(title: str = "", link: str = "", image_src: str = "", tags=None, github: str = "", children=None) -> Any:
     """Shared card for projects and blog posts: optional image, linked title, tag pills, optional GitHub link and body text."""
     if link:
-        title_el = (
-            <a target="_blank" rel="noopener noreferrer" href={link} className="text-blue-600 hover:text-blue-800">
-                {title}
-            </a>
-        )
+        # "#something" opens a modal on this same page, so it must not open a new tab
+        title_el = <InternalLink href={link}>{title}</InternalLink> if link.startswith("#") else <ExternalLink href={link}>{title}</ExternalLink>
     else:
         title_el = <span className="text-gray-900">{title}</span>
 
     img_el = None
     if image_src:
-        img_el = <img src={image_src} alt={title} className="shadow-lg w-30 h-30 object-cover rounded mb-3" />
+        img_el = <img src={image_src} alt={title} className="shadow-lg w-24 h-24 sm:w-30 sm:h-30 object-cover rounded mb-3" />
 
     tag_pills = [
         <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded inline-block">{t}</span>
@@ -27,9 +25,7 @@ def Card(title: str = "", link: str = "", image_src: str = "", tags=None, github
     ]
 
     github_el = (
-        <a target="_blank" rel="noopener noreferrer" href={github} className="text-sm text-blue-600 hover:text-blue-800 inline-block mb-2">
-            View Source on GitHub
-        </a>
+        <ExternalLink href={github} extra_style="text-sm inline-block mb-2">View Source on GitHub</ExternalLink>
     ) if github else None
 
     text_block = (
@@ -41,14 +37,14 @@ def Card(title: str = "", link: str = "", image_src: str = "", tags=None, github
     )
 
     content = (
-        <div className="flex gap-1">
+        <div className="flex gap-5 sm:gap-1">
             <div className="flex-1 min-w-0">{img_el}</div>
             <div className="flex-2 min-w-0">{text_block}</div>
         </div>
     ) if img_el else text_block
 
     return (
-        <div className="border border-gray-200 rounded-lg p-5 bg-white hover:shadow-md transition-shadow">
+        <div className="border border-gray-200 rounded-lg p-6 sm:p-5 bg-white hover:shadow-md transition-shadow">
             {content}
             <p className="text text-gray-600 mt-1">{flatten_children(children)}</p>
         </div>

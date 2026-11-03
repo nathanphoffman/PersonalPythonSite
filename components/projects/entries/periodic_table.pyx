@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def PeriodicTable() -> Any:
     return (
-        <Project image="periodictable.png" link="/examples/periodictable/index.html">
+        <Project image="periodictable.png" link="/periodictable">
             <Title>Periodic Table</Title>
             <Tech>ReactJS</Tech>
             A ReactJS experiment to try and render a responsive table manually:

@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def SpaceGame3d() -> Any:
     return (
-        <Project github="https://github.com/nathanphoffman/3dSpaceGame">
+        <Project image="space_game_3d.png" github="https://github.com/nathanphoffman/3dSpaceGame" install_slug="3dspacegame">
             <Title>3D Space Game</Title>
             <Tech>Rust</Tech>
             <Tech>Deor</Tech>

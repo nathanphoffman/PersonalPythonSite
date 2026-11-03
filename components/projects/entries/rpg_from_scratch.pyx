@@ -8,7 +8,7 @@ from components.projects.project import Project, Title, Tech  # type: ignore[imp
 @component
 def RpgFromScratch() -> Any:
     return (
-        <Project image="codingastronomer.png" link="">
+        <Project image="codingastronomer.png" link="/rpgfromscratch">
             <Title>RPG From Scratch</Title>
             <Tech>React</Tech>
             <Tech>Bootstrap</Tech>

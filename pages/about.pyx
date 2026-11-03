@@ -9,14 +9,14 @@ def About() -> Any:
         <div className="text-gray-700 leading-relaxed">
             <h1 className="text-4xl font-bold text-gray-900 mb-8">About Me</h1>
             <div className="flex justify-center mb-8">
-                <img src="/static/img/nate.jpg" alt="Me at a waterfall." className="rounded-full w-48 h-48 object-cover shadow-lg" />
+                <img src="/static/img/nate_portrait.jpg" alt="A photo of me." className="rounded-full w-48 h-48 object-cover shadow-lg" />
             </div>
 
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Programming</h2>
             <p>
                 In the late 80s I was born into a basement which was flooded with Commodore 64 Amiga hardware
                 and software from my dad's closed computer shop business. For many years, my brother and I
-                discovered treasures from the shop in old boxes and storage. In my preteen years my dad handed
+                discovered treasures from the shop in old boxes and storage. Around age 13, my dad handed
                 me the Second Edition C book by Brian Kernighan and Dennis Ritchie, and I began building both my
                 first programs and my first computers. By high school I was creating websites for friends who had
                 parents with businesses, and building computers for their families. I joined computer LAN groups
@@ -35,6 +35,10 @@ def About() -> Any:
             I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. 
             I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
             </p>
+            <figure className="mx-auto w-2/3 min-w-64 mt-6">
+                <img src="/static/img/favorite_languages.png" alt="Cartoon animals standing for my favorite languages: Deor, TS/JS, Rust, Hare, C, Rexx, C#, Fortran, Go, Mojo and Python." className="w-full rounded-lg shadow-lg" />
+                <figcaption className="text-sm text-gray-500 text-center mt-2">My favorite programming languages roughly from left to right (AI Generated)</figcaption>
+            </figure>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Astronomy</h2>
             <p>
                 When I was young, my dad would look at the nightsky through a small spotting scope at planets,
