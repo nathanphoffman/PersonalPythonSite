@@ -8,7 +8,7 @@ from components.projects import FairyTaleAdventure, SpaceGame3d, TzaarNet, ValOu
 
 GUIDES = {
     "3dspacegame": (SpaceGame3d, SpaceCombatGuide),
-    "faerytale": (FairyTaleAdventure, FaeryTaleGuide),
+    "fairytale": (FairyTaleAdventure, FaeryTaleGuide),
     "valoutcast": (ValOutcast, ValOutcastGuide),
     "tzaarnet": (TzaarNet, TzaarNetGuide),
 }
