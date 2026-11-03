@@ -2,6 +2,7 @@ import pyjsx_setup  # registers .px / .pyx import hook — must be first
 
 pyjsx_setup.setup()
 
+import hashlib
 from pathlib import Path
 
 from app import App  # type: ignore[import-not-found]
@@ -20,6 +21,7 @@ app = Starlette()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Standalone games built by scripts/build_static_sites.sh. Only mounted once built, so a fresh clone still starts.
+CACHE_BUSTER_LENGTH = 8
 STATIC_SITES = ("lostwizard", "rpgfromscratch", "nightember", "photogallery", "periodictable")
 
 
@@ -37,12 +39,21 @@ for site_name in STATIC_SITES:
         app.add_route(f"/{site_name}", redirect_to_folder(site_name))
         app.mount(f"/{site_name}", StaticFiles(directory=f"sites/{site_name}", html=True), name=site_name)
 
+
+
+def versioned_static_url(file_name: str) -> str:
+    """Static URL with a short content hash on the end, so a CDN (Cloudflare) fetches a fresh copy whenever the file changes."""
+    content = Path("static", file_name).read_bytes()
+
+    return f"/static/{file_name}?v={hashlib.md5(content).hexdigest()[:CACHE_BUSTER_LENGTH]}"
+
+
 options = Options(
     head=(
         html.title("The Coding Astronomer"),
         html.meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
-        html.link({"rel": "stylesheet", "href": "/static/output.css"}),
-        html.script({"src": "/static/open_modal_from_hash.js", "defer": True}),
+        html.link({"rel": "stylesheet", "href": versioned_static_url("output.css")}),
+        html.script({"src": versioned_static_url("open_modal_from_hash.js"), "defer": True}),
     ),
     # We serve the index ourselves below, so ReactPy must not register its own
     serve_index_route=False,

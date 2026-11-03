@@ -31,8 +31,7 @@ def About() -> Any:
             </p>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">A New Surge</h2>
             <p>
-            Covid really was a hard time on me (and many others I am sure) and while my love of code dropped some, probably due to a lack of time, that has substantially changed. 
-            I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. 
+            Covid really was a hard time on me (and many others I am sure) and while my love of code hit a lull over that time, it started to rebound in a way I never thought possible. I have made a return to my hobby programming roots, possibly more strongly than ever in my life, with May 2026 - present being one of my most productive programming periods of my life. 
             I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
             </p>
             <figure className="mx-auto w-2/3 min-w-64 mt-6">
