@@ -1043,6 +1043,9 @@
     }
   }
 }
+html {
+  overflow-y: scroll;
+}
 #app:not(:empty) + #app-shell {
   display: none;
 }

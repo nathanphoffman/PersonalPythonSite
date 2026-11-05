@@ -11,6 +11,11 @@
   }
 }
 
+/* Always reserve the scrollbar so pages don't shift when content length changes. */
+html {
+  overflow-y: scroll;
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   &::-webkit-scrollbar {
