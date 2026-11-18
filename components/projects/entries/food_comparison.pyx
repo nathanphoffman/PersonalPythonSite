@@ -16,6 +16,7 @@ def FoodComparison() -> Any:
             <Tech>Rust</Tech>
             <Tech>WASM</Tech>
             <Tech>C# .NET</Tech>
+            <Tech>Python</Tech>
             <Tech>SQLite</Tech>
             <Tech>Docker</Tech>
             I created this tool as a way to experiment with Claude agents to source food data and help make decisions about how to plan a diet based on various factors from nutrition to environmental impact.

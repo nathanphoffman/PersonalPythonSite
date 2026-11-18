@@ -11,6 +11,7 @@ def NewWebProject() -> Any:
         <Project image="newweb.png" link="https://newwebproject.org" github="https://github.com/nathanphoffman/NewWeb">
             <Title>The New Web Project</Title>
             <Tech>WASM</Tech>
+            <Tech>Rust</Tech>
             <Tech>TS/JS</Tech>
             <Tech>Go</Tech>
             <Tech>CSS</Tech>

@@ -12,7 +12,8 @@ def SpaceBoardGame() -> Any:
             <Title>Space Board Game</Title>
             <Tech>TypeScript</Tech>
             <Tech>Next.js</Tech>
+            <Tech>C# .NET 10</Tech>
             <Tech>Postgres</Tech>
-            A small single-player space strategy game in the style of OGame. It runs on Next.js with a Postgres database that sets itself up on the first request.
+            A multiplayer space strategy game in the style of OGame, played in a shared galaxy. It has a Next.js front end, a C# .NET 10 server that holds the game rules, and a Postgres database, with live updates over SignalR.
         </Project>
     )
