@@ -35,7 +35,7 @@ def About() -> Any:
             I have now created my own programming language (Deor), explored Go, Rust, C (some more), Mojo, and Python.
             </p>
             <figure className="mx-auto w-2/3 min-w-64 mt-6">
-                <img src="/static/img/favorite_languages.png" alt="Cartoon animals standing for my favorite languages: Deor, TS/JS, Rust, Hare, C, Rexx, C#, Fortran, Go, Mojo and Python." className="w-full rounded-lg shadow-lg" />
+                <img src="/static/img/favorite_languages_v2.png" alt="Cartoon animals standing for my favorite languages: Deor, TS/JS, Rust, Hare, C, Rexx, C#, Fortran, Go, Mojo and Python." className="w-full rounded-lg shadow-lg" />
                 <figcaption className="text-sm text-gray-500 text-center mt-2">My favorite programming languages roughly from left to right (AI Generated)</figcaption>
             </figure>
             <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-3">Astronomy</h2>
